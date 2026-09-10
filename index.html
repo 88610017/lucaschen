@@ -2,7 +2,8 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- 严格锁定视口比例，禁止双指手势缩放 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
   <title>LUCAS CHEN</title>
   
   <!-- 动态自适应矢量 Favicon：暗色系统白标，亮色系统黑标 -->
@@ -20,9 +21,12 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
     
-    body {
+    html, body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       -webkit-font-smoothing: antialiased;
+      /* 核心约束：仅允许垂直滑动滚动，底层锁死两指捏合与缩放手势 */
+      touch-action: pan-y;
+      -webkit-text-size-adjust: 100%;
     }
     .font-mono {
       font-family: 'JetBrains Mono', monospace;
@@ -124,7 +128,7 @@
         </div>
       </section>
 
-      <!-- Selected Writings / Archive Section (手机端深度优化布局) -->
+      <!-- Selected Writings / Archive Section -->
       <section class="border-b border-neutral-300 dark:border-neutral-800">
         <div class="px-5 sm:px-6 py-2.5 bg-neutral-100/70 dark:bg-neutral-900/50 border-b border-neutral-300 dark:border-neutral-800 flex justify-between items-center">
           <span class="font-mono text-[11px] uppercase tracking-widest text-neutral-500 dark:text-neutral-400">[ ESSAYS & LOGS ]</span>
@@ -336,7 +340,7 @@
             <p>——题外话说一句，再加上deepseek的推出，中美的交易逻辑发生了巨变，中国变成了“Ai”，反而美国变成了“改革”，究竟能改到哪一步，没人能知道。</p>
 
             <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">不过相比于特朗普，马斯克所作所为所想就像是小巫见大巫</h2>
-            <p>上一篇《武装后的特朗普归来》里只是大概设想了特朗普在科技方面的政策和他的新内阁可能的行动方向，却忽略了他的外交政策。直到有一天我百无聊赖打开地图看，才发现特朗普为何如此垂涎格陵兰岛，也似乎对一个疯子的外交政策有了点眉头。以下是我用一个疯子的思维去思考一个疯子可能会做的事情，如果不幸说中，那就是空中掉下来一块石头刚好砸中在走路的我；如果没有言中，那就是皆大欢喜，不过疯言疯语而。</p>
+            <p>上一篇《武装后的特朗普归来》里只是大概设想了特朗普在科技方面的政策和他的新内阁可能的行动方向，却忽略了他的外交政策。直到有一天我百无赖解打开地图看，才发现特朗普为何如此垂涎格陵兰岛，也似乎对一个疯子的外交政策有了点眉头。以下是我用一个疯子的思维去思考一个疯子可能会做的事情，如果不幸说中，那就是空中掉下来一块石头刚好砸中在走路的我；如果没有言中，那就是皆大欢喜，不过疯言疯语而。</p>
             <p>特朗普果不其然又祭出了关税大棒，甚至敲打日本央行应该尽快加息，他真的不怕通胀卷土重来吗？如果按照经济学家的角度去看特朗普，他目前做的一切只会让通胀卷土重来，进而拖累全球经济。但是特朗普是一个不按常理出牌的政治家，在他的底牌打出来之前，你永远不知道他在想什么。</p>
             <p>线索一，退出巴黎气候组织协议；</p>
             <p>线索二，声称要将格陵兰岛变成美国领土、并且称加拿大是美国的一个州；</p>
@@ -431,7 +435,7 @@
             <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">4</h2>
             <p>之前写的一篇文章提到了“一个疯子和一群硅谷精英可能的疯狂社会实验”，没想到就从马斯克开始拉开了序幕。在政府效率部成立之后，马部长的镰刀首先砍向了政府部门，从2001年开始，美国政府再也没有实现预算盈余，去年财政支出高达6.16万亿美元，而财政收入只有4.47万亿美元。2001年正好是美国向外军事势力扩张的开始，那一年发生了著名的911事件，然后美国以此为借口将长手伸向了中东地区以及很多地方，克林顿提出的信息高速公路计划所产生的政府盈余几乎全部转化为美国庞大的军事支出。小布什之后是奥巴马，他们一样维持着美国世界警察的风格，这种情况直到野蛮人特朗普第一次上台，在世界范围内各种退出组织，要求被驻军国支付军费等等。只是特朗普的第一任期阻力重重，他也在中期选举被弹劾下台，下台之后奥巴马影子政府依然对他穷追猛打，在台前运作的人物是佩洛西，一口气定了特朗普四十二项大罪，期间甚至派FBI对特朗普的住处海湖庄园进行搜查。如今特朗普再度归来，佩洛西应该后悔当时没有一手将特朗普赶尽杀绝，对奥巴马影子政府不遗余力、马首是瞻却成了一枚被抛弃的棋子。如今这个疯子的背后站着一群新生代的硅谷精英，要是说特朗普1.0在白宫还是孤立无援的话，那强势归来的特朗普2.0肯定会让所有人大惊失色，除了背后一众新生代的硅谷精英，这次以特朗普为首的共和党已经明确拿下参议院、众议院、立法机构以及大多数州，无论这个“疯子”想做什么事情，特朗普1.0所受到的那种阻力已然不复存在，如今的特朗普可以说是罗斯福之后权力最大的美国总统，手拿两院，三权归一。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">5</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">5</h2>
             <p>摆在特朗普面前的问题也同样棘手，全球冲突、移民、债务、社会分化加剧等等，在最不可预测的特朗普成功赢下总统选举后，俄乌都加快了进攻对方的节奏，想争取在明年一月份特朗普正式就职之前为自己在“美国-欧洲-俄罗斯-乌克兰”的会谈上争取到最大的谈判空间。特朗普是否能如他保证的那样叫停俄乌冲突和实现中东和平值得期待。除了这些典型的政客经典任务之外，特朗普已经任命了一位强硬派负责边境事务——前海关执法局代理局长汤姆·霍曼，媒体给他起了一个外号叫“边境沙皇”。加上任命马斯克为政府效率部部长，特朗普政府的任命处处都透露着“改变”两个字。</p>
             <p>如果说奥巴马的影子政府在白宫根深蒂固大家都有所耳闻，那么美联储就是那个不为人所知却实际中操控美国经济的幕后BOSS，不仅仅是美国经济，全球经济的命脉都被美联储掐在手中，十年美债收益率更是全球资产之锚。在第一篇《货币的过去以及未来》中介绍过，美联储实际上是十二家大银行集结的私人机构，却控制着印钞权。历史上的美国总统有肯尼迪和林肯都尝试过推翻美联储，他们的下场也都一样，被暗杀。如今“手拿两院，三权归一”的特朗普会怎么对付美联储肯定也是特朗普2.0的重头戏之一。额外提一句，肯尼迪的侄孙小肯尼迪也参加了这次总统大选，但是后期退出总统大选变成了特朗普的坚定支持者。在赢下总统选举还没有正式就职总统之位时，特朗普就对媒体放言要开了鲍威尔（现任美联储主席），急得鲍威尔对媒体回呛自己会上诉法院，只不过鲍威尔好像忘了立法机构中有三位大法官都是特朗普第一任期中任命的。</p>
             <p>美国所面临的天量债务问题不是靠搞定美联储收回印钞权就能解决的，这是美元作为最大的全球贸易基准货币必然产生的问题。用数字美元解决吗？我不知道数字美元会以什么方式推出；硅谷的那帮新生代精英中，OpenAI的CEO推出了自己的world coin。扎克伯格推出过自己的Libra，被美联储叫停。可见这些硅谷大佬对数字货币的愿景有着不小的野心，更不用说特朗普本身也是一位加密货币/数字货币友好型政治人物。前年大陆央行也尝试推出了数字人民币，今天看没掀起一丝波澜。因为我们的数字人民币是和现行人民币1:1兑换，实际上就是纸钞的数字化，这东西假设普及了，最多也是在环保和追溯上有所建树，并不能改变全球现在现行货币系统的弊端，即调控落后于市场，真实货币需要完成“投放-流通-反馈-调控”一系列完成的链条，大大降低了M2-M1的传导效率，央行还需要实时紧盯市场物价水平、国际汇率变化实时准备调控货币。我不是预言家，没办法说特朗普和他背后的硅谷精英打算怎么革了现代货币体系的命，只是从他们的行动趋势中发现这个端倪，我也很期待这场疯狂的社会实验会怎么开始，不简简单单是精简政府部门、提升政府运作效率，更有怎么用AI开启新的工业革命提升社会总生产效率和怎么用数字货币革了传统纸币的命实现更好的财富分配，世界在现有的平台上停留太久了，需要有人来推动它继续前进。也许一个不受控的特朗普和一群不想被控制的硅谷精英会是答案。</p>
@@ -551,21 +555,22 @@
       </article>
     </div>
 
-    <!-- 规整的 Footer (手机端完美居中/两端对齐) -->
-    <footer class="px-5 sm:px-6 py-6 border-t border-neutral-300 dark:border-neutral-800 flex flex-row justify-between items-center font-mono text-xs text-neutral-400 dark:text-neutral-500">
+    <!-- 规整的 Footer (两端风格一致，完全不加粗) -->
+    <footer class="px-5 sm:px-6 py-6 border-t border-neutral-300 dark:border-neutral-800 flex flex-row justify-between items-center font-mono text-[11px] font-normal text-neutral-400 dark:text-neutral-500">
       <div class="flex items-center space-x-2">
         <span class="inline-block w-1.5 h-1.5 bg-neutral-400 dark:bg-neutral-600"></span>
-        <span class="font-semibold text-neutral-700 dark:text-neutral-300 tracking-wider">LUCASCHEN.CC</span>
+        <span class="tracking-wider">LUCASCHEN.CC</span>
       </div>
-      <div class="text-[11px]">
+      <div>
         <span>© 2026</span>
       </div>
     </footer>
 
   </div>
 
-  <!-- 防复制脚本与定位 -->
+  <!-- 防复制脚本与移动端手势锁死 -->
   <script>
+    // 1. 防复制、防剪切、防右键
     document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
     });
@@ -580,6 +585,27 @@
       e.preventDefault();
     });
 
+    // 2. 彻底禁止 iOS / 移动端两指手势缩放与多点触控
+    document.addEventListener('gesturestart', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('touchmove', function(e) {
+      if (e.scale !== 1 && e.scale !== undefined) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function(e) {
+      const now = (new Date()).getTime();
+      if (now - lastTouchEnd <= 300) {
+        e.preventDefault(); // 阻止手机快速双击放大
+      }
+      lastTouchEnd = now;
+    }, false);
+
+    // 3. 文章展开平滑定位
     function toggleArticle(id) {
       const target = document.getElementById(id);
       const isCurrentlyHidden = target.classList.contains('hidden');

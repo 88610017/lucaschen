@@ -2,19 +2,19 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>LUCAS CHEN</title>
   
   <!-- 动态自适应矢量 Favicon：暗色系统白标，亮色系统黑标 -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cstyle%3E.stroke-line%7Bstroke:%23111111;fill:none;stroke-width:10;stroke-linecap:square%7D@media(prefers-color-scheme:dark)%7B.stroke-line%7Bstroke:%23F8F8F6%7D%7D%3C/style%3E%3Cpath class='stroke-line' d='M65 20 H20 V65' /%3E%3Cpath class='stroke-line' d='M35 80 H80 V35' /%3E%3C/svg%3E">
 
-  <!-- 苹果 iOS 手机 Safari 收藏 / 添加到主屏幕桌面专用图标（黑底白线几何标） -->
+  <!-- 苹果 iOS 收藏 / 主屏幕桌面图标 -->
   <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'%3E%3Crect width='180' height='180' fill='%23111111'/%3E%3Cpath d='M115 38 H38 V115' stroke='%23FFFFFF' stroke-width='18' stroke-linecap='square' fill='none'/%3E%3Cpath d='M65 142 H142 V65' stroke='%23FFFFFF' stroke-width='18' stroke-linecap='square' fill='none'/%3E%3C/svg%3E">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'media', // 跟随系统深浅色偏好自动切换
+      darkMode: 'media',
     }
   </script>
   <style>
@@ -22,12 +22,13 @@
     
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
     .font-mono {
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* 全局禁止选中、禁止拖拽、禁止高亮复制 */
+    /* 全局防选中/防复制 */
     * {
       -webkit-user-select: none;
       -moz-user-select: none;
@@ -37,7 +38,7 @@
     }
   </style>
 </head>
-<body class="bg-[#F8F8F6] text-[#111111] dark:bg-[#0E0E0E] dark:text-[#E8E8E6] antialiased transition-colors duration-200">
+<body class="bg-[#F8F8F6] text-[#111111] dark:bg-[#0E0E0E] dark:text-[#E8E8E6] transition-colors duration-200">
 
   <!-- Main Container -->
   <div class="max-w-4xl mx-auto border-x border-neutral-300 dark:border-neutral-800 min-h-screen flex flex-col justify-between">
@@ -46,8 +47,7 @@
       <!-- Header -->
       <header class="border-b border-neutral-300 dark:border-neutral-800 px-5 sm:px-6 py-4 flex justify-between items-center text-xs font-mono tracking-wider">
         <a href="#" class="flex items-center space-x-3 group">
-          <!-- 矢量几何 Logo -->
-          <svg class="w-6 h-6 shrink-0 transition-transform group-hover:scale-105" viewBox="0 0 100 100" fill="none">
+          <svg class="w-5 h-5 shrink-0 transition-transform group-hover:scale-105" viewBox="0 0 100 100" fill="none">
             <path d="M65 20 H20 V65" stroke="currentColor" stroke-width="10" stroke-linecap="square" class="text-neutral-900 dark:text-neutral-100" />
             <path d="M35 80 H80 V35" stroke="currentColor" stroke-width="10" stroke-linecap="square" class="text-neutral-900 dark:text-neutral-100" />
           </svg>
@@ -57,17 +57,17 @@
         </a>
         <div class="flex items-center space-x-2">
           <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span class="text-neutral-500 dark:text-neutral-400">ONLINE</span>
+          <span class="text-neutral-500 dark:text-neutral-400 text-[11px]">ONLINE</span>
         </div>
       </header>
 
       <!-- Hero Statement -->
-      <section class="border-b border-neutral-300 dark:border-neutral-800 px-5 sm:px-6 py-12 md:py-20">
-        <p class="font-mono text-xs uppercase tracking-widest text-neutral-400 dark:text-neutral-500 mb-3 md:mb-4">[ DIRECTORY & ESSAYS ]</p>
-        <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-4 md:mb-5">
+      <section class="border-b border-neutral-300 dark:border-neutral-800 px-5 sm:px-6 py-10 sm:py-16">
+        <p class="font-mono text-[11px] uppercase tracking-widest text-neutral-400 dark:text-neutral-500 mb-3">[ DIRECTORY & ESSAYS ]</p>
+        <h1 class="text-2xl sm:text-4xl font-bold tracking-tight leading-tight mb-3">
           Observing macro liquidity, systemic shifts & rule breakers.
         </h1>
-        <p class="text-neutral-600 dark:text-neutral-400 max-w-xl text-sm md:text-base leading-relaxed">
+        <p class="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed">
           记录宏观流动性、体系裂痕，与正在被颠覆的旧规则。
         </p>
       </section>
@@ -75,193 +75,207 @@
       <!-- Broadcast Channels -->
       <section class="border-b border-neutral-300 dark:border-neutral-800">
         <div class="px-5 sm:px-6 py-2.5 bg-neutral-100/70 dark:bg-neutral-900/50 border-b border-neutral-300 dark:border-neutral-800 flex justify-between items-center">
-          <span class="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">[ BROADCAST CHANNELS ]</span>
-          <span class="font-mono text-xs text-neutral-400 dark:text-neutral-600">INDEX: 03</span>
+          <span class="font-mono text-[11px] uppercase tracking-widest text-neutral-500 dark:text-neutral-400">[ BROADCAST CHANNELS ]</span>
+          <span class="font-mono text-[11px] text-neutral-400 dark:text-neutral-600">03</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-neutral-300 dark:divide-neutral-800">
           <!-- X -->
           <a href="https://x.com/x_lucaschen" target="_blank" rel="noopener noreferrer" 
-             class="group p-5 sm:p-6 flex flex-col justify-between hover:bg-white dark:hover:bg-neutral-900/80 transition-colors">
-            <div class="flex justify-between items-start mb-4 md:mb-6">
-              <span class="font-mono text-xs text-neutral-400 dark:text-neutral-600">CH.01</span>
+             class="group p-5 flex flex-col justify-between hover:bg-white dark:hover:bg-neutral-900/80 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <span class="font-mono text-[11px] text-neutral-400 dark:text-neutral-600">CH.01</span>
               <span class="font-mono text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
             </div>
             <div>
-              <div class="font-mono text-xs tracking-wider text-neutral-500 dark:text-neutral-400 uppercase mb-1">MICRO-BLOGGING</div>
-              <div class="text-base sm:text-lg font-bold group-hover:underline">X / Twitter</div>
-              <p class="text-neutral-500 dark:text-neutral-400 text-xs mt-1.5 leading-normal">实时观点、碎片思考与行业观察</p>
+              <div class="font-mono text-[10px] tracking-wider text-neutral-500 dark:text-neutral-400 uppercase mb-0.5">MICRO-BLOGGING</div>
+              <div class="text-base font-bold group-hover:underline">X / Twitter</div>
+              <p class="text-neutral-500 dark:text-neutral-400 text-xs mt-1">实时观点、碎片思考与行业观察</p>
             </div>
           </a>
 
           <!-- YouTube -->
           <a href="https://www.youtube.com/@yt_lucaschen" target="_blank" rel="noopener noreferrer" 
-             class="group p-5 sm:p-6 flex flex-col justify-between hover:bg-white dark:hover:bg-neutral-900/80 transition-colors">
-            <div class="flex justify-between items-start mb-4 md:mb-6">
-              <span class="font-mono text-xs text-neutral-400 dark:text-neutral-600">CH.02</span>
+             class="group p-5 flex flex-col justify-between hover:bg-white dark:hover:bg-neutral-900/80 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <span class="font-mono text-[11px] text-neutral-400 dark:text-neutral-600">CH.02</span>
               <span class="font-mono text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
             </div>
             <div>
-              <div class="font-mono text-xs tracking-wider text-neutral-500 dark:text-neutral-400 uppercase mb-1">LONG-FORM VIDEO</div>
-              <div class="text-base sm:text-lg font-bold group-hover:underline">YouTube</div>
-              <p class="text-neutral-500 dark:text-neutral-400 text-xs mt-1.5 leading-normal">深度视频、专题讨论与技术实验</p>
+              <div class="font-mono text-[10px] tracking-wider text-neutral-500 dark:text-neutral-400 uppercase mb-0.5">LONG-FORM VIDEO</div>
+              <div class="text-base font-bold group-hover:underline">YouTube</div>
+              <p class="text-neutral-500 dark:text-neutral-400 text-xs mt-1">深度视频、专题讨论与技术实验</p>
             </div>
           </a>
 
           <!-- Bilibili -->
           <a href="https://space.bilibili.com/14014217" target="_blank" rel="noopener noreferrer" 
-             class="group p-5 sm:p-6 flex flex-col justify-between hover:bg-white dark:hover:bg-neutral-900/80 transition-colors">
-            <div class="flex justify-between items-start mb-4 md:mb-6">
-              <span class="font-mono text-xs text-neutral-400 dark:text-neutral-600">CH.03</span>
+             class="group p-5 flex flex-col justify-between hover:bg-white dark:hover:bg-neutral-900/80 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <span class="font-mono text-[11px] text-neutral-400 dark:text-neutral-600">CH.03</span>
               <span class="font-mono text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
             </div>
             <div>
-              <div class="font-mono text-xs tracking-wider text-neutral-500 dark:text-neutral-400 uppercase mb-1">COMMUNITY VIDEO</div>
-              <div class="text-base sm:text-lg font-bold group-hover:underline">Bilibili 哔哩哔哩</div>
-              <p class="text-neutral-500 dark:text-neutral-400 text-xs mt-1.5 leading-normal">国内视频发布、日常动态与互动</p>
+              <div class="font-mono text-[10px] tracking-wider text-neutral-500 dark:text-neutral-400 uppercase mb-0.5">COMMUNITY VIDEO</div>
+              <div class="text-base font-bold group-hover:underline">Bilibili 哔哩哔哩</div>
+              <p class="text-neutral-500 dark:text-neutral-400 text-xs mt-1">国内视频发布、日常动态与互动</p>
             </div>
           </a>
         </div>
       </section>
 
-      <!-- Selected Writings / Archive Section (7 Entries) -->
+      <!-- Selected Writings / Archive Section (手机端深度优化布局) -->
       <section class="border-b border-neutral-300 dark:border-neutral-800">
         <div class="px-5 sm:px-6 py-2.5 bg-neutral-100/70 dark:bg-neutral-900/50 border-b border-neutral-300 dark:border-neutral-800 flex justify-between items-center">
-          <span class="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">[ ESSAYS & LOGS ]</span>
-          <span class="font-mono text-xs text-neutral-400 dark:text-neutral-600">ENTRIES: 07</span>
+          <span class="font-mono text-[11px] uppercase tracking-widest text-neutral-500 dark:text-neutral-400">[ ESSAYS & LOGS ]</span>
+          <span class="font-mono text-[11px] text-neutral-400 dark:text-neutral-600">07</span>
         </div>
 
         <div class="divide-y divide-neutral-200 dark:divide-neutral-800">
           <!-- Article 07 -->
           <button onclick="toggleArticle('article-genius')" 
-                  class="w-full text-left group px-5 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row md:items-center justify-between hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
-            <div class="flex items-baseline space-x-3 sm:space-x-4">
-              <span class="font-mono text-xs text-neutral-400 dark:text-neutral-500 shrink-0">2025.06</span>
-              <span class="text-sm sm:text-base font-semibold group-hover:underline">大漂亮法案和GENIUS法案</span>
-            </div>
-            <div class="mt-2.5 md:mt-0 flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0 self-end md:self-auto">
-              <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[11px]">POLICY / CRYPTO</span>
-              <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+                  class="w-full text-left group px-5 sm:px-6 py-4 hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div class="text-sm sm:text-base font-semibold text-neutral-900 dark:text-neutral-100 group-hover:underline leading-snug">
+                大漂亮法案和GENIUS法案
+              </div>
+              <div class="flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0">
+                <span class="text-neutral-400 dark:text-neutral-500 text-[11px]">2025.06</span>
+                <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[10px]">POLICY / CRYPTO</span>
+                <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+              </div>
             </div>
           </button>
 
           <!-- Article 06 -->
           <button onclick="toggleArticle('article-gold')" 
-                  class="w-full text-left group px-5 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row md:items-center justify-between hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
-            <div class="flex items-baseline space-x-3 sm:space-x-4">
-              <span class="font-mono text-xs text-neutral-400 dark:text-neutral-500 shrink-0">2025.04</span>
-              <span class="text-sm sm:text-base font-semibold group-hover:underline">黄金的逻辑</span>
-            </div>
-            <div class="mt-2.5 md:mt-0 flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0 self-end md:self-auto">
-              <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[11px]">MACRO / GOLD</span>
-              <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+                  class="w-full text-left group px-5 sm:px-6 py-4 hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div class="text-sm sm:text-base font-semibold text-neutral-900 dark:text-neutral-100 group-hover:underline leading-snug">
+                黄金的逻辑
+              </div>
+              <div class="flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0">
+                <span class="text-neutral-400 dark:text-neutral-500 text-[11px]">2025.04</span>
+                <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[10px]">MACRO / GOLD</span>
+                <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+              </div>
             </div>
           </button>
 
           <!-- Article 05 -->
           <button onclick="toggleArticle('article-madman')" 
-                  class="w-full text-left group px-5 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row md:items-center justify-between hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
-            <div class="flex items-baseline space-x-3 sm:space-x-4">
-              <span class="font-mono text-xs text-neutral-400 dark:text-neutral-500 shrink-0">2025.03</span>
-              <span class="text-sm sm:text-base font-semibold group-hover:underline">当我用一个疯子的思维去思考一个疯子</span>
-            </div>
-            <div class="mt-2.5 md:mt-0 flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0 self-end md:self-auto">
-              <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[11px]">GEOPOLITICS / MACRO</span>
-              <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+                  class="w-full text-left group px-5 sm:px-6 py-4 hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div class="text-sm sm:text-base font-semibold text-neutral-900 dark:text-neutral-100 group-hover:underline leading-snug">
+                当我用一个疯子的思维去思考一个疯子
+              </div>
+              <div class="flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0">
+                <span class="text-neutral-400 dark:text-neutral-500 text-[11px]">2025.03</span>
+                <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[10px]">GEOPOLITICS</span>
+                <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+              </div>
             </div>
           </button>
 
           <!-- Article 04 -->
           <button onclick="toggleArticle('article-inflation')" 
-                  class="w-full text-left group px-5 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row md:items-center justify-between hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
-            <div class="flex items-baseline space-x-3 sm:space-x-4">
-              <span class="font-mono text-xs text-neutral-400 dark:text-neutral-500 shrink-0">2024.11</span>
-              <span class="text-sm sm:text-base font-semibold group-hover:underline">通胀为什么在“杀死”你</span>
-            </div>
-            <div class="mt-2.5 md:mt-0 flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0 self-end md:self-auto">
-              <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[11px]">MACRO / CPI</span>
-              <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+                  class="w-full text-left group px-5 sm:px-6 py-4 hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div class="text-sm sm:text-base font-semibold text-neutral-900 dark:text-neutral-100 group-hover:underline leading-snug">
+                通胀为什么在“杀死”你
+              </div>
+              <div class="flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0">
+                <span class="text-neutral-400 dark:text-neutral-500 text-[11px]">2024.11</span>
+                <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[10px]">MACRO / CPI</span>
+                <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+              </div>
             </div>
           </button>
 
           <!-- Article 03 -->
           <button onclick="toggleArticle('article-doge')" 
-                  class="w-full text-left group px-5 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row md:items-center justify-between hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
-            <div class="flex items-baseline space-x-3 sm:space-x-4">
-              <span class="font-mono text-xs text-neutral-400 dark:text-neutral-500 shrink-0">2024.11</span>
-              <span class="text-sm sm:text-base font-semibold group-hover:underline">D.O.G.E和doge、X和推特、特朗普1.0和特朗普2.0</span>
-            </div>
-            <div class="mt-2.5 md:mt-0 flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0 self-end md:self-auto">
-              <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[11px]">MACRO / MEME</span>
-              <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+                  class="w-full text-left group px-5 sm:px-6 py-4 hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div class="text-sm sm:text-base font-semibold text-neutral-900 dark:text-neutral-100 group-hover:underline leading-snug">
+                D.O.G.E和doge、X和推特、特朗普1.0和特朗普2.0
+              </div>
+              <div class="flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0">
+                <span class="text-neutral-400 dark:text-neutral-500 text-[11px]">2024.11</span>
+                <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[10px]">MACRO / MEME</span>
+                <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+              </div>
             </div>
           </button>
 
           <!-- Article 02 -->
           <button onclick="toggleArticle('article-trump')" 
-                  class="w-full text-left group px-5 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row md:items-center justify-between hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
-            <div class="flex items-baseline space-x-3 sm:space-x-4">
-              <span class="font-mono text-xs text-neutral-400 dark:text-neutral-500 shrink-0">2024.11</span>
-              <span class="text-sm sm:text-base font-semibold group-hover:underline">武装后的特朗普归来</span>
-            </div>
-            <div class="mt-2.5 md:mt-0 flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0 self-end md:self-auto">
-              <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[11px]">POLITICS / TECH</span>
-              <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+                  class="w-full text-left group px-5 sm:px-6 py-4 hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div class="text-sm sm:text-base font-semibold text-neutral-900 dark:text-neutral-100 group-hover:underline leading-snug">
+                武装后的特朗普归来
+              </div>
+              <div class="flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0">
+                <span class="text-neutral-400 dark:text-neutral-500 text-[11px]">2024.11</span>
+                <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[10px]">POLITICS / TECH</span>
+                <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+              </div>
             </div>
           </button>
 
           <!-- Article 01 -->
           <button onclick="toggleArticle('article-btc')" 
-                  class="w-full text-left group px-5 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row md:items-center justify-between hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
-            <div class="flex items-baseline space-x-3 sm:space-x-4">
-              <span class="font-mono text-xs text-neutral-400 dark:text-neutral-500 shrink-0">2023.09</span>
-              <span class="text-sm sm:text-base font-semibold group-hover:underline">聊聊比特币</span>
-            </div>
-            <div class="mt-2.5 md:mt-0 flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0 self-end md:self-auto">
-              <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[11px]">MACRO / ESSAY</span>
-              <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+                  class="w-full text-left group px-5 sm:px-6 py-4 hover:bg-white dark:hover:bg-neutral-900/60 transition-colors">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div class="text-sm sm:text-base font-semibold text-neutral-900 dark:text-neutral-100 group-hover:underline leading-snug">
+                聊聊比特币
+              </div>
+              <div class="flex items-center space-x-3 font-mono text-xs text-neutral-500 dark:text-neutral-400 shrink-0">
+                <span class="text-neutral-400 dark:text-neutral-500 text-[11px]">2023.09</span>
+                <span class="border border-neutral-300 dark:border-neutral-700 px-1.5 py-0.5 text-[10px]">MACRO / ESSAY</span>
+                <span class="font-bold group-hover:translate-x-1 transition-transform">READ ↘</span>
+              </div>
             </div>
           </button>
         </div>
       </section>
 
-      <!-- Article Readers -->
+      <!-- Readers -->
 
-      <!-- Article 07: 大漂亮法案和GENIUS法案 -->
-      <article id="article-genius" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-10 md:py-14">
+      <!-- Article 07 -->
+      <article id="article-genius" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-8 sm:py-12">
         <div class="max-w-2xl mx-auto">
-          <div class="flex justify-between items-center pb-5 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6 md:mb-8">
-            <span>ENTRY: 007 // ESSAY</span>
+          <div class="flex justify-between items-center pb-4 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6">
+            <span>ENTRY: 007</span>
             <button onclick="toggleArticle('article-genius')" class="hover:text-black dark:hover:text-white font-bold uppercase underline">
-              [ CLOSE ARTICLE ✕ ]
+              [ CLOSE ✕ ]
             </button>
           </div>
 
-          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6 md:mb-8">大漂亮法案和GENIUS法案</h1>
+          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">大漂亮法案和GENIUS法案</h1>
 
-          <div class="space-y-6 text-sm md:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">美国总统和世界首富互喷</h2>
+          <div class="space-y-5 text-sm sm:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">美国总统和世界首富互喷</h2>
             <p>前段时间马斯克跟特朗普公然在X平台互喷，围绕的就是特朗普的大漂亮法案，全称One Big Beautiful Bill Act（OBBBA）。目前法案已在众议院通过，在通过参议院之后就可以被总统签署实施。马斯克说自己全程没有看过这部法案，指责这个法案会增加美国的债务并且损害投资者的利益，威胁停止SpaceX飞船计划。特朗普则说马斯克看过这部法案，并且怒骂马斯克，除了下令检查SpaceX跟政府的合同之外，还要考虑卖掉自己为了支持马斯克而购入的那辆一直停在白宫花园里的红色model S。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">大漂亮法案和GENIUS法案</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">大漂亮法案和GENIUS法案</h2>
             <p>首先，这个法案的名字真的叫大漂亮法案，很有特朗普的风格。在通过众议院之后，有些眼尖的人发现法案看似不起眼的第899条实际上是一颗大雷，简单点说就是特朗普政府要对所有非美投资者征收5%的税，而且是每年递增5%直到20%的上限，你在美国的投资，不仅限于美股、美债，甚至你在美国购买的房产卖出或者租出产生的被动收入全部要被征收5%起的税。</p>
             <p>美国作为全球最重要的金融市场，他的美债规模是37万亿美元，外国投资者持有9万亿美元；美股规模是79万亿美元，外国投资者持有14万亿美元。这些全部按照5%征税，虽然在第一年确实会给美国政府补充不少收入，但是实打实在损害美国这个全球最大的金融市场，也难怪马斯克看到这条法案之后直接在X平台怒喷特朗普。</p>
             <p>GENIUS法案翻译过来就是天才法案，没错，特朗普的取名总是这么朴实无华。GENIUS法案是稳定币的法案，有关稳定币的介绍可看陈城佑同学的精选文章《稳定币研究(2025年-6月)》。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">特朗普的大漂亮法案真就是一次头脑发热的决定吗？</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">特朗普的大漂亮法案真就是一次头脑发热的决定吗？</h2>
             <p>对于美国金融市场的国际大买家欧洲来说，从大打保护主义的特朗普上台之后，表现最亮眼的资产是黄金，一部分原因是市场对美元资产不确定性做的对冲措施大举增持黄金导致黄金价格一骑绝尘。同时欧盟核心国德国的股票在今年也上涨了21%，欧元对美元也升值7%，这体现了欧洲资本在加速撤离美国。欧洲跟美国在二战后建立了盟友关系，放弃了军事自卫，严重依赖于美国的军事保护，但是在今年欧洲投票通过了增加军事支出，试图实现军事自卫。</p>
             <p>作为美国金融市场的另一个大买家——日本，今年之前，日本是全球极少数坚持零利率的发达国家之一，这导致金融市场长期一直存在一条借日元换美元然后投资美股的套利暗线，这种套利行为也助推了美股的上涨。</p>
             <p>特朗普的大漂亮法案对国际市场上的两个大买家来说无疑是晴天霹雳。特朗普难道真的想赶走美国市场在国际上的两个大买家吗？可能并不是，这里就要提到GENIUS法案了。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">GENIUS法案剑指华尔街？</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">GENIUS法案剑指华尔街？</h2>
             <p>现在世界这套金融体系是建立在美元美债体系之上的，美国过去一直以军事霸权和美元霸权独步天下，美元和美债被视为世界上最安全的资产，如果你没有持有美元或者美债，几乎无法参与全球贸易体系，这就是国际资本大举购买美国资产的原因，他们通过华尔街的SWIFT系统将本国货币转换成美元然后购入美股、美债等各种资产。</p>
             <p>这个过程中，华尔街这套SWIFT系统只是一个搬运工，负责的工作是打开冰箱——拿出肉——放到餐桌上，看似它不是肉的最终享用者，但仅仅是来回搬运时沾在手上的油水就已经是一笔不菲的收入了。不过SWIFT系统并非天生完美，它存在门槛极高和转账繁琐两个难以解决的问题，门槛极高指的是：SWIFT系统需要达到一定规模的本国结算银行和国际银行还有美国银行才能构建整个体系，所以非洲落后小国并不能参与进SWIFT系统；同时它的转账要经过美国银行签署——国际银行通过汇率兑换——本国银行结算才能到账，过程繁琐而且效率很低，国际转账通常7-15天到账。整套系统让华尔街从中捞足了油水，在这个背景下特朗普推出了GENIUS法案，也就是所谓的稳定币法案，要知道的是大漂亮法案的非美投资者征税范围并不包含稳定币，这样的话特朗普的目的昭然若揭——那就是把SWIFT这个搬运工换成自己可以掌控的稳定币，然后利用稳定币形成的资金池购买短期美债。只要美元计价的国际贸易依然在运作，其产生的油水可以源源不断充当美债的短期买家并且绕开华尔街流进国库，而且稳定币不会像SWIFT一样有繁琐的手续，相比之下稳定币转账只需要你的账户兑换稳定币再发送到你需要转账的地址进而兑换成当地的法币，这个过程可以减少汇率磨损，你所能做的就是保护好你的密钥，最重要的一点是：稳定币不需要传统银行这个基础设施，它面向全人类，非洲落后国家的人也可以通过手机将自己的法币兑换成稳定币去购买各种资产。这里就可以设想美国接下来的动作了，那就是加速推进RWA，RWA就是现实世界资产token化，简单点说就是上链，你可以通过稳定币在区块链上购买美股、美债、知识产权、大宗商品等实体资产。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">国内企业对于稳定币的布局</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">国内企业对于稳定币的布局</h2>
             <p>国内京东在积极申请稳定币牌照，稳定币对于京东来说是他跟亚马逊在国际市场扳手腕的关键，京东在国际上发行基于京东集团信用背书的稳定币，减少当地市场的汇率摩擦，同时提升交易速度和便利性，效率的提升也会及时传导到京东物流。可以预见京东集团的下一步或者已经在推进的策略是加速在国际上完善京东物流运输范围和本地自建仓储的建设，跟京东稳定币相辅相成，打造京东集团在国际市场上的支付体系和物流体系。</p>
           </div>
 
-          <div class="mt-10 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-center">
+          <div class="mt-8 pt-5 border-t border-neutral-200 dark:border-neutral-800 text-center">
             <button onclick="toggleArticle('article-genius')" class="font-mono text-xs border border-neutral-400 dark:border-neutral-700 px-4 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
               BACK TO INDEX ↑
             </button>
@@ -269,19 +283,19 @@
         </div>
       </article>
 
-      <!-- Article 06: 黄金的逻辑 -->
-      <article id="article-gold" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-10 md:py-14">
+      <!-- Article 06 -->
+      <article id="article-gold" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-8 sm:py-12">
         <div class="max-w-2xl mx-auto">
-          <div class="flex justify-between items-center pb-5 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6 md:mb-8">
-            <span>ENTRY: 006 // ESSAY</span>
+          <div class="flex justify-between items-center pb-4 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6">
+            <span>ENTRY: 006</span>
             <button onclick="toggleArticle('article-gold')" class="hover:text-black dark:hover:text-white font-bold uppercase underline">
-              [ CLOSE ARTICLE ✕ ]
+              [ CLOSE ✕ ]
             </button>
           </div>
 
-          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6 md:mb-8">黄金的逻辑</h1>
+          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">黄金的逻辑</h1>
 
-          <div class="space-y-6 text-sm md:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
+          <div class="space-y-5 text-sm sm:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
             <p>我之前表示看好黄金是在2023年10月份，那时候还没来快手，去南昌参加了VR大会，遇见了很多同行。推杯换盏之间聊起经济走势，我说可以买入黄金并且持有。现在是2025年4月，黄金价格已经达到3270美元一盎司（今天是4月21日上午，黄金达到3380美元一盎司的历史新高），相比与2023年10月的1834美元一盎司，已经是涨了44%。对了，得说明一下，我建议朋友买的是银行发行的金条，而不是黄金饰品，前者的流通性更好且折损率更低。更需要说明的是，我在推荐了黄金后就把这件事忘之脑后了，直到朋友上个月来成都，告诉我当时买了六根金条到现在还拿着，要不要卖出。</p>
             <p><strong>回想起我当时看好黄金的理由，无疑是在赌美元体系崩塌。只是没料到特朗普的上台加快了这个过程。</strong></p>
             <p>回归到金融本质。一战和二战中，美国的地理位置决定了它是独一无二的避风港，远离战火中心欧亚大陆，大量国家将黄金运输到美国保存，同时美国输出武器等工业品到各个国家，自己本土除了珍珠岛这场人为的战争之外没有成为二战的主战场。然后美国为了方便各国兑换黄金，行政命令将美元与黄金挂钩。接下来，布雷顿森林体系瓦解，石油美元上台，美国和中东紧密合作，中东以美元为结算单位将石油出口到全球然后购买美债，这个举动造就了中东的富饶也打下了美元作为全球贸易结算体系的主要货币的地基。也许从美国宣布开采页岩油从最大的石油进口国变成出口国开始，石油美元注定在未来的某一刻会寿终正寝。</p>
@@ -292,7 +306,7 @@
             <p>黄金的价格在中美冲突加剧的情况下会稳步上涨，这是避险属性在发挥作用。黄金受制于运输困难体积无法缩小而无法胜任现代货币的要求，如果仅仅是作为价值储备，可以说是当之无愧。总量有限，天生通缩，在这个由信用构建的现代货币体系中，黄金这种“笨家伙”显得尤为珍贵。</p>
           </div>
 
-          <div class="mt-10 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-center">
+          <div class="mt-8 pt-5 border-t border-neutral-200 dark:border-neutral-800 text-center">
             <button onclick="toggleArticle('article-gold')" class="font-mono text-xs border border-neutral-400 dark:border-neutral-700 px-4 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
               BACK TO INDEX ↑
             </button>
@@ -300,29 +314,29 @@
         </div>
       </article>
 
-      <!-- Article 05: 当我用一个疯子的思维去思考一个疯子 -->
-      <article id="article-madman" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-10 md:py-14">
+      <!-- Article 05 -->
+      <article id="article-madman" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-8 sm:py-12">
         <div class="max-w-2xl mx-auto">
-          <div class="flex justify-between items-center pb-5 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6 md:mb-8">
-            <span>ENTRY: 005 // ESSAY</span>
+          <div class="flex justify-between items-center pb-4 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6">
+            <span>ENTRY: 005</span>
             <button onclick="toggleArticle('article-madman')" class="hover:text-black dark:hover:text-white font-bold uppercase underline">
-              [ CLOSE ARTICLE ✕ ]
+              [ CLOSE ✕ ]
             </button>
           </div>
 
-          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">当我用一个疯子的思维去思考一个疯子</h1>
+          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">当我用一个疯子的思维去思考一个疯子</h1>
 
-          <div class="border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 p-4 font-sans text-sm text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed">
+          <div class="border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 p-4 font-sans text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
             <p><strong>早在特朗普还在跟哈里斯争取选票的时候，我就笃定他会带着“Ai”和“加密货币”卷土重来。写下本文标题的时候是2025年3月5日，特朗普已经正式上任总统45天，也是在这段时间里推出了“星际之门”和“加密货币之都”。</strong></p>
           </div>
 
-          <div class="space-y-6 text-sm md:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
+          <div class="space-y-5 text-sm sm:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
             <p>四十五天其实可以观察到很多事情了，例如马克思领导的"DOGE"（政府效率部门）对臃肿低效的政府部门大开杀戒，邮件要求上传一周的工作日志，如果没有按时上传直接默认开除；甚至提出了可以自行离职，联邦会提供5万美金的补贴；建立了网站将各部门数据上传并且公开等等。手段之雷霆、执行之高效让特朗普直接在内阁会维护马斯克，说出了那句——“谁反对马斯克谁就滚蛋。”</p>
             <p>DOGE的运作其实超出我的预料，它不一定真的能从根基上改变美国有“金融垄断资本主义”风格的官僚形式，但至少马斯克这个疯子已经开始在尝试了，目标就是将所有的国家运作机器放在公开透明的环境下高效运行、缩减支出，并且接受监督。更是直接将矛头指向美联储，要求公开化审计，试图将这个真正控制着美国经济的巨无霸推倒。马斯克所做的事情是向内的，就像他当初为了提高特斯拉的产量直接睡在工厂里一样，他自始至终只讲究两个字，那就是效率。提升政府部门运作效率，缩减岗位并且减少支出，怎么看都像是将特斯拉经验搬进了白宫。</p>
             <p>——题外话说一句，再加上deepseek的推出，中美的交易逻辑发生了巨变，中国变成了“Ai”，反而美国变成了“改革”，究竟能改到哪一步，没人能知道。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">不过相比于特朗普，马斯克所作所为所想就像是小巫见大巫</h2>
-            <p>上一篇《武装后的特朗普归来》里只是大概设想了特朗普在科技方面的政策和他的新内阁可能的行动方向，却忽略了他的外交政策。直到有一天我百无赖解打开地图看，才发现特朗普为何如此垂涎格陵兰岛，也似乎对一个疯子的外交政策有了点眉头。以下是我用一个疯子的思维去思考一个疯子可能会做的事情，如果不幸说中，那就是空中掉下来一块石头刚好砸中在走路的我；如果没有言中，那就是皆大欢喜，不过疯言疯语而。</p>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">不过相比于特朗普，马斯克所作所为所想就像是小巫见大巫</h2>
+            <p>上一篇《武装后的特朗普归来》里只是大概设想了特朗普在科技方面的政策和他的新内阁可能的行动方向，却忽略了他的外交政策。直到有一天我百无聊赖打开地图看，才发现特朗普为何如此垂涎格陵兰岛，也似乎对一个疯子的外交政策有了点眉头。以下是我用一个疯子的思维去思考一个疯子可能会做的事情，如果不幸说中，那就是空中掉下来一块石头刚好砸中在走路的我；如果没有言中，那就是皆大欢喜，不过疯言疯语而。</p>
             <p>特朗普果不其然又祭出了关税大棒，甚至敲打日本央行应该尽快加息，他真的不怕通胀卷土重来吗？如果按照经济学家的角度去看特朗普，他目前做的一切只会让通胀卷土重来，进而拖累全球经济。但是特朗普是一个不按常理出牌的政治家，在他的底牌打出来之前，你永远不知道他在想什么。</p>
             <p>线索一，退出巴黎气候组织协议；</p>
             <p>线索二，声称要将格陵兰岛变成美国领土、并且称加拿大是美国的一个州；</p>
@@ -338,7 +352,7 @@
             <p>打，毛主席说过一句话：“打得一拳开，免得百拳来!”</p>
           </div>
 
-          <div class="mt-10 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-center">
+          <div class="mt-8 pt-5 border-t border-neutral-200 dark:border-neutral-800 text-center">
             <button onclick="toggleArticle('article-madman')" class="font-mono text-xs border border-neutral-400 dark:border-neutral-700 px-4 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
               BACK TO INDEX ↑
             </button>
@@ -346,43 +360,43 @@
         </div>
       </article>
 
-      <!-- Article 04: 通胀为什么在“杀死”你 -->
-      <article id="article-inflation" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-10 md:py-14">
+      <!-- Article 04 -->
+      <article id="article-inflation" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-8 sm:py-12">
         <div class="max-w-2xl mx-auto">
-          <div class="flex justify-between items-center pb-5 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6 md:mb-8">
-            <span>ENTRY: 004 // ESSAY</span>
+          <div class="flex justify-between items-center pb-4 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6">
+            <span>ENTRY: 004</span>
             <button onclick="toggleArticle('article-inflation')" class="hover:text-black dark:hover:text-white font-bold uppercase underline">
-              [ CLOSE ARTICLE ✕ ]
+              [ CLOSE ✕ ]
             </button>
           </div>
 
-          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">通胀为什么在“杀死”你</h1>
+          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">通胀为什么在“杀死”你</h1>
 
-          <div class="border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 p-4 font-sans text-sm text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed">
-            <p class="font-bold mb-2">前言</p>
+          <div class="border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 p-4 font-sans text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
+            <p class="font-bold mb-1">前言</p>
             <p>我们这一代人没有经历过大通胀时代。最多也是从课本中得知例如美国1929大萧条、德国超通胀以及津巴布韦大通胀导致的津巴布韦币急剧贬值。如果夸张一点说，通胀在阻碍你完成资本初始积累，也是隐瞒你的劳动贡献应占社会总生产力真实比例以及应得分配的帮凶。</p>
           </div>
 
-          <div class="space-y-6 text-sm md:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">一</h2>
+          <div class="space-y-5 text-sm sm:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">一</h2>
             <p>通胀产生的原因之一是央行对货币的调节与市场脱节。这是放在一个封闭模型里得出的结论，例如我们的金融市场本身可以说是一个封闭的模型，在朱镕基时代就奠定了基础，由中央银行主导，接下来是国有商业银行——商业银行——地方商业银行等。加上监督部门以及财政部，金融体系做到了拆分，这样的好处是结构风险可控制在局部，坏处就是链条众多导致的传导效率低下。这套系统理论上可以运作很长时间，但是自从特朗普上台发动贸易战以及疫情的影响，中国经济三驾马车中的外贸受到波及，间接传递到了消费，导致消费中的大头房地产摇摇欲坠，在恒大、碧桂园暴雷后有风险扩大的趋势，也是得益于封闭的金融系统，采取化债的方式将风险控制在可控范围内。所谓化债就是以时间换空间，将地方债集中打包延期处理，发行五十年超长期国债为地方债兜底，如果未来五十年内GDP一直在预期目标浮动，集中的债务会分散成不影响经济增长的碎片化债务被消化掉。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">二</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">二</h2>
             <p>如果金融市场是开放的，例如美国，那么通胀的根源更难控制，因为美元是全球贸易交易的基准货币，各国又有自己的法定货币，法定货币在国内流通，但是想要在国际市场交易需要兑换成美元，汇率经常波动（<em>可以看做是经济的晴雨表</em>），可以粗略地说各国的经济情况通过汇率汇总到美元市场，反推则是美联储可以通过加息或者降息影响到全球市场。在这个开放模型中，通胀的来源更难定位，美联储所能做的也是被动式调节利率，如果你经常关注经济数据，就会发现美国的CPI重要程度高于任何国家，这里存在一个链条：CPI（<em>过去一段时间内反映通胀或者通缩的消费者物价指数</em>）——利率（<em>降息或者加息</em>）——十年美债收益率（<em>未来的经济状况</em>），即CPI反应过去一段时间的经济表现，从而影响美联储根据数据决定是否加息或者降息，在美联储的决定上对未来经济的展望就体现在十年美债收益率上。占美国CPI数据统计大头的是住房价格（<em>包含租房租金</em>）、食品和能源价格，这也是西方经典CPI数据统计的构成，像北溪管道被炸，天然气期货暴涨，导致欧洲各国通胀数据都有不同程度上升。如果你经常看金融软件，会发现有些金融软件会播报巴西或者一些地方的天气数据，以前我也不得其解，看了CPI统计中食品的构成，才知道是因为天气影响农作物接下来的产值，而原材料的产出上升或下降又反应在食品价格上，这真是巴西的一只蝴蝶扇了扇翅膀在太平洋上引起一场风暴的“蝴蝶效应”的完美体现。</p>
             <p>过去在疫情爆发叠加俄乌冲突的背景下，美国的通胀大有站上两位数的嫌疑，导致全球最重要的央行——美联储用了一年多的时间去控制通胀，截止目前可算把通胀数据控制在2%以内，但是美联储依然没搞清通胀的来源，而且除了季节性通胀之外，核心通胀的粘性似乎超过了美联储的预估（<em>能源属于季节性通胀，核心通胀包含食品以及住房等</em>）。</p>
             <p>话说回来我们的CPI数据统计口径跟西方不同，占我们CPI统计数据大头的是猪肉价格，而且我们的CPI数据统计不包含住房价格以及租房租金。这就反映出了一个问题，按照猪肉价格表现，我们现在的CPI数据呈现出我们处于通胀的趋势中，但是如果将住房价格以及租房租金数据加入，会明显发现我们处于通缩的趋势中，哪一种趋势更符合居民的实际感官想必不用多说。很多人对CPI略有耳闻，但却不清楚CPI数据的构成成分，新闻媒体也从来没宣传过这方面，只能靠自己查询。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">三</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">三</h2>
             <p>通胀总是反映在物品价格上，不总是反映在你的工资上。90年代的万元户相当于现在的百万富翁，一辆二八大杠相当于现在的一辆小轿车。假设你是一名平均值工薪族，从90年代开始工作一直到现在（<em>确实是常青树了</em>），你也经历了十元计工资——百元计工资——千元计工资的时代，对应的交通工具变迁可能是自行车——摩托车——小轿车，这背后是社会总财富和总生产力的上升，如果是一张饼状图，假设十元计工资时代你的社会贡献是1%，你的工资回报是1%，那么在百元计和千元计工资时代里，这两个数值都不会有太大出入，只是得益于社会总财富和总生产力的上升，你的自行车变成了摩托车又变成了小轿车，你的工资十元计变成了百元计又变成了千元计。</p>
             <p>但是为什么总有人能在骑自行车的时代里开小轿车，在开小轿车的时代里开私人飞机？无非就两种路子，一是让自己的社会总贡献急剧增长，对应的就是工资回报也同样急剧增长；二是选择能够跑赢通胀的资产。这里需要强调一下，本文中的工资指的不是名义上公司给你发的工资，而是广义上你自己劳动所得的产出计价。</p>
             <p>在中国房地产发展的黄金时代，很多人搭上了房地产这辆快速车，使得自己财富增长跑赢通胀。房地产发展的黄金时代得益于人口的稳步增长和经济的稳定发展，但是并没有对人口减少做计价考虑，还因为房地产能够带动上下游消费市场从而在2013年对房地产行业大开绿灯，导致现在市场上房子的供应远大于需求，然后现在提出放开二胎、三胎政策，提供旧房换新房补贴等等，尽管如此，可短期之内很难有逆转局面的可能，最多只是延缓。至于会不会达到日本大萧条或者韩国现在人人躺平的那种状态，主要是看接下来我们的消费回暖如何，中国是世界上居民储蓄最多的国家之一，如果能够激活内需消费，将居民的储蓄释放出来，我们会避免滑向日本大萧条或者韩国躺平的状态，只是现在明显缺乏消费的信心，这是多方面构成的复杂问题。这里需要提一下日本央行和中国央行的不同点，日本本身是高科技出口型外贸国家，积累了大量的美元储备，进一步日本央行作为全球最重要的六家央行也是唯一保持负利率的央行，这就促成日本资本在海外大肆收购和扩张，已经成为仅次于美元资本的全球第二大资金来源。中国央行应该不会选择跟日本央行一样的路线——如果我们采取零利率或者负利率，我们会取代日本成为全球资金套利的温床，即零利率或者负利率借入人民币兑换成美元然后进入各种风险市场利用杠杆将套利资金利润空间最大化，这会导致泡沫扩大，最后崩盘的时候除了美元计价资产一片狼藉。我们现在正处于降息路线上，目的是为了刺激消费，但是我们降息的空间并不算太大，截至目前效果确实不如预期，我个人预测明年会进一步加强外汇管控，同时黄金会在2025年再创新高。如果没有实质性手段改变通缩现状，居民消费信心会进一步受到影响。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">四</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">四</h2>
             <p>通胀为何如此重要？因为实际利率=名义利率-通货膨胀率（<em>CPI数据</em>），美联储进行了一年的加息是在增加名义利率，假设CPI数据是9%，美联储需要加息到9%以上——例如10%，来保证实际利率为正数，才能避免通货膨胀引起的死亡螺旋。在这个加息过程中，美元成为全球最值钱的货币，很多法币持有者会将自己持有的法币兑换成美元。正是因为这样，美元可以虹吸全球。假设你有100元，持有一年时间，你还是100元。如果通胀率是10%，到了年底，你的100元实际购买力只有90元；如果你在年初用100元购买了房地产，正好房地产市场需求扩大，到了年底你100元买入的房地产价值变成了150元（<em>当然没有这么便宜的房子，只是浅显地举个例子而已</em>），这样的话你的资产可以说跑赢了通胀，甚至你搭上了通胀的快车实现了资产增值。大致了解了经济背景以及CPI的意义之后，你其实会发现——通胀正在“杀死”你。你的财富增长被通胀磨损，让你很难完成原始的资本积累。你也正处于一个通胀的时代里，你通过劳动所得的工资也在被通胀稀释，当下的市场中很难再找到能跑赢通胀的资本标的。2025年可以预见的是会继续扩大消费刺激，争取改变通缩现状进入温和通胀，只是当下的中国市场很难在找到像2013年的房地产一样的作弊代码。现在大力度推广机关单位以及社会层面对于新能源车辆的采用程度，但是说到底新能源车辆是一个损耗品，而且是迭代极快的科技产品。再说到Ai，我其实比较悲观，Ai的推广普及代表着工作岗位减少，虽然可以提升社会效率，但是也增加了社会能耗需求。</p>
             <p>在全球经济这艘船迷茫不知去向的时候，我们能做的就是养成储蓄的习惯，降低消费欲望，避免风险敞口，定投黄金等抗通胀资产。</p>
           </div>
 
-          <div class="mt-10 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-center">
+          <div class="mt-8 pt-5 border-t border-neutral-200 dark:border-neutral-800 text-center">
             <button onclick="toggleArticle('article-inflation')" class="font-mono text-xs border border-neutral-400 dark:border-neutral-700 px-4 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
               BACK TO INDEX ↑
             </button>
@@ -390,40 +404,40 @@
         </div>
       </article>
 
-      <!-- Article 03: D.O.G.E和doge、X和推特、特朗普1.0和特朗普2.0 -->
-      <article id="article-doge" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-10 md:py-14">
+      <!-- Article 03 -->
+      <article id="article-doge" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-8 sm:py-12">
         <div class="max-w-2xl mx-auto">
-          <div class="flex justify-between items-center pb-5 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6 md:mb-8">
-            <span>ENTRY: 003 // ESSAY</span>
+          <div class="flex justify-between items-center pb-4 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6">
+            <span>ENTRY: 003</span>
             <button onclick="toggleArticle('article-doge')" class="hover:text-black dark:hover:text-white font-bold uppercase underline">
-              [ CLOSE ARTICLE ✕ ]
+              [ CLOSE ✕ ]
             </button>
           </div>
 
-          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6 md:mb-8">D.O.G.E和doge、X和推特、特朗普1.0和特朗普2.0</h1>
+          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">D.O.G.E和doge、X和推特、特朗普1.0和特朗普2.0</h1>
 
-          <div class="space-y-6 text-sm md:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">1</h2>
+          <div class="space-y-5 text-sm sm:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">1</h2>
             <p>Department of Government Efficiency,翻译过来就是政府效率部。</p>
             <p>故事可能起源于一个玩笑，有个推特用户在介绍doge的时候用了Department of Government Efficiency这个释义，然后回复被马斯克点赞了。从那之后，马斯克亲自站队doge，一路将doge送上meme币市值之王，截止今天为422亿美金。此时距离冲浪之王马斯克点赞doge这条回复已经过去了五年，当我们回头看的时候，也许当时那名网友的回复“DOGE=Department of Government Efficiency”就在马斯克心里默默种下了种子。</p>
             <p>doge是一个形象为柴犬的加密货币，他的开发者最初的目的是讽刺加密货币，于是照抄比特币的源代码，做了一些极小的修改，例如把代码中的bitcoin改成doge，把供应量2100万枚改成1000亿枚（在2014年更新的时候去掉了总供应限制）等等，dogecoin就这么诞生了，大家更喜欢叫它doge。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">2</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">2</h2>
             <p>提到doge，不得不提到2021年1月份注定会在世界金融史上留下浓墨一笔的WallStreetBets（WSB）——占领华尔街运动。故事起源于香橼资本做空GameStop，GameStop是一家电子产品销售商，股票代码是GME，因为持续亏损的财报被香橼资本盯上。可这次擅长做空的香橼资本却吃瘪了，reddit上出现了一个用户，id叫Roaring Kitty（咆哮小猫），这家伙因为在在这场运动中体现出的强大的号召力被称为散户之王，甚至reddit对它的账号封禁，包括Robinhood这家券商公司也对他的账号进行了封禁处理，这都是后话了。在这里先讲讲什么是做空，香橼资本想要做空GameStop需要向券商借入大量GameStop的股票，然后在市场上抛售，然后在期权行权日将借入数量的股票归还于券商。再说的简单点，香橼资本向券商借了假设10000股GameStop股票，此时的股票价格是100美元，香橼资本拿到股票后全部抛售，股票跌到了10美元，香橼资本只需要原来价格的十分之一就可以买回全部10000股并且还给券商，扣除行权金和定金和手续费后，香橼资本盈利至少有90%以上。可这次，Roaring Kitty出现了，他发现了游戏规则的漏洞，在reddit上号召大家买入GameStop的股票并且坚决持有，如果这样，在行权日之前香橼资本无法低价在市场上买到GameStop的股票，只能高价吃入散户持有的股票以完成交割，不然违约金会直接导致香橼资本破产。事情按照Roaring Kitty预料的方向在发展，著名的占领华尔街运动就此拉开序幕，散户们不再向资本妥协，这场运动不仅使GameStop的股票一飞冲天，连NOKIA、AMC、黑莓等被资本长期做空的股票都顺带沾光起飞，甚至带动了doge的暴涨。如果将WSB运动看成是属于年轻人的思想觉醒，那同月发生的冲击国会山则是中老年人对于选举结果不满发出的一声呐喊。两者的背后都是对世界既定运作规则的不满，体现在doge的文化中，也体现在传统美国人举起枪振臂一呼的呐喊里，这种不满也加强了马斯克和特朗普作为意见领袖的地位。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">3</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">3</h2>
             <p>民主党在自己最擅长的传统媒体领域对特朗普各种抹黑，也因为忌惮特朗普在网络媒体的巨大影响力，一口气封禁了特朗普的推特账号，这个时候马斯克出现了，花费420亿收购了推特改名为X，上来做了两件大事——大规模裁员和解封了特朗普的社交账号。也许马斯克当时没有太多想法，只是想扩大自己的社交媒体版图，但是不得不承认马斯克收购推特这一步确实间接帮助了特朗普再度入主白宫。要是唯结果论的话，马斯克或许当初就想好了怎么帮助特朗普，这么说多少给收购推特这段故事添加了一丝神话色彩，也多少给马斯克的传奇又添了浓墨一笔。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">4</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">4</h2>
             <p>之前写的一篇文章提到了“一个疯子和一群硅谷精英可能的疯狂社会实验”，没想到就从马斯克开始拉开了序幕。在政府效率部成立之后，马部长的镰刀首先砍向了政府部门，从2001年开始，美国政府再也没有实现预算盈余，去年财政支出高达6.16万亿美元，而财政收入只有4.47万亿美元。2001年正好是美国向外军事势力扩张的开始，那一年发生了著名的911事件，然后美国以此为借口将长手伸向了中东地区以及很多地方，克林顿提出的信息高速公路计划所产生的政府盈余几乎全部转化为美国庞大的军事支出。小布什之后是奥巴马，他们一样维持着美国世界警察的风格，这种情况直到野蛮人特朗普第一次上台，在世界范围内各种退出组织，要求被驻军国支付军费等等。只是特朗普的第一任期阻力重重，他也在中期选举被弹劾下台，下台之后奥巴马影子政府依然对他穷追猛打，在台前运作的人物是佩洛西，一口气定了特朗普四十二项大罪，期间甚至派FBI对特朗普的住处海湖庄园进行搜查。如今特朗普再度归来，佩洛西应该后悔当时没有一手将特朗普赶尽杀绝，对奥巴马影子政府不遗余力、马首是瞻却成了一枚被抛弃的棋子。如今这个疯子的背后站着一群新生代的硅谷精英，要是说特朗普1.0在白宫还是孤立无援的话，那强势归来的特朗普2.0肯定会让所有人大惊失色，除了背后一众新生代的硅谷精英，这次以特朗普为首的共和党已经明确拿下参议院、众议院、立法机构以及大多数州，无论这个“疯子”想做什么事情，特朗普1.0所受到的那种阻力已然不复存在，如今的特朗普可以说是罗斯福之后权力最大的美国总统，手拿两院，三权归一。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">5</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">5</h2>
             <p>摆在特朗普面前的问题也同样棘手，全球冲突、移民、债务、社会分化加剧等等，在最不可预测的特朗普成功赢下总统选举后，俄乌都加快了进攻对方的节奏，想争取在明年一月份特朗普正式就职之前为自己在“美国-欧洲-俄罗斯-乌克兰”的会谈上争取到最大的谈判空间。特朗普是否能如他保证的那样叫停俄乌冲突和实现中东和平值得期待。除了这些典型的政客经典任务之外，特朗普已经任命了一位强硬派负责边境事务——前海关执法局代理局长汤姆·霍曼，媒体给他起了一个外号叫“边境沙皇”。加上任命马斯克为政府效率部部长，特朗普政府的任命处处都透露着“改变”两个字。</p>
             <p>如果说奥巴马的影子政府在白宫根深蒂固大家都有所耳闻，那么美联储就是那个不为人所知却实际中操控美国经济的幕后BOSS，不仅仅是美国经济，全球经济的命脉都被美联储掐在手中，十年美债收益率更是全球资产之锚。在第一篇《货币的过去以及未来》中介绍过，美联储实际上是十二家大银行集结的私人机构，却控制着印钞权。历史上的美国总统有肯尼迪和林肯都尝试过推翻美联储，他们的下场也都一样，被暗杀。如今“手拿两院，三权归一”的特朗普会怎么对付美联储肯定也是特朗普2.0的重头戏之一。额外提一句，肯尼迪的侄孙小肯尼迪也参加了这次总统大选，但是后期退出总统大选变成了特朗普的坚定支持者。在赢下总统选举还没有正式就职总统之位时，特朗普就对媒体放言要开了鲍威尔（现任美联储主席），急得鲍威尔对媒体回呛自己会上诉法院，只不过鲍威尔好像忘了立法机构中有三位大法官都是特朗普第一任期中任命的。</p>
             <p>美国所面临的天量债务问题不是靠搞定美联储收回印钞权就能解决的，这是美元作为最大的全球贸易基准货币必然产生的问题。用数字美元解决吗？我不知道数字美元会以什么方式推出；硅谷的那帮新生代精英中，OpenAI的CEO推出了自己的world coin。扎克伯格推出过自己的Libra，被美联储叫停。可见这些硅谷大佬对数字货币的愿景有着不小的野心，更不用说特朗普本身也是一位加密货币/数字货币友好型政治人物。前年大陆央行也尝试推出了数字人民币，今天看没掀起一丝波澜。因为我们的数字人民币是和现行人民币1:1兑换，实际上就是纸钞的数字化，这东西假设普及了，最多也是在环保和追溯上有所建树，并不能改变全球现在现行货币系统的弊端，即调控落后于市场，真实货币需要完成“投放-流通-反馈-调控”一系列完成的链条，大大降低了M2-M1的传导效率，央行还需要实时紧盯市场物价水平、国际汇率变化实时准备调控货币。我不是预言家，没办法说特朗普和他背后的硅谷精英打算怎么革了现代货币体系的命，只是从他们的行动趋势中发现这个端倪，我也很期待这场疯狂的社会实验会怎么开始，不简简单单是精简政府部门、提升政府运作效率，更有怎么用AI开启新的工业革命提升社会总生产效率和怎么用数字货币革了传统纸币的命实现更好的财富分配，世界在现有的平台上停留太久了，需要有人来推动它继续前进。也许一个不受控的特朗普和一群不想被控制的硅谷精英会是答案。</p>
           </div>
 
-          <div class="mt-10 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-center">
+          <div class="mt-8 pt-5 border-t border-neutral-200 dark:border-neutral-800 text-center">
             <button onclick="toggleArticle('article-doge')" class="font-mono text-xs border border-neutral-400 dark:border-neutral-700 px-4 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
               BACK TO INDEX ↑
             </button>
@@ -431,34 +445,34 @@
         </div>
       </article>
 
-      <!-- Article 02: 武装后的特朗普归来 -->
-      <article id="article-trump" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-10 md:py-14">
+      <!-- Article 02 -->
+      <article id="article-trump" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-8 sm:py-12">
         <div class="max-w-2xl mx-auto">
-          <div class="flex justify-between items-center pb-5 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6 md:mb-8">
-            <span>ENTRY: 002 // ESSAY</span>
+          <div class="flex justify-between items-center pb-4 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6">
+            <span>ENTRY: 002</span>
             <button onclick="toggleArticle('article-trump')" class="hover:text-black dark:hover:text-white font-bold uppercase underline">
-              [ CLOSE ARTICLE ✕ ]
+              [ CLOSE ✕ ]
             </button>
           </div>
 
           <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">武装后的特朗普归来</h1>
-          <p class="font-mono text-xs text-neutral-500 mb-6 md:mb-8 border-b border-neutral-200 dark:border-neutral-800 pb-4">
+          <p class="font-mono text-xs text-neutral-500 mb-6 border-b border-neutral-200 dark:border-neutral-800 pb-3">
             11月6号美国大选落下帷幕，特朗普成为第47任美国总统。借用他的副手万斯的一句话概括——“这是美国历史上最伟大的政治回归”。
           </p>
 
-          <div class="space-y-6 text-sm md:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">时间拨到2016年，特朗普VS希拉里，为什么会是特朗普？</h2>
+          <div class="space-y-5 text-sm sm:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">时间拨到2016年，特朗普VS希拉里，为什么会是特朗普？</h2>
             <p>2016年，富商特朗普第一次竞选美国总统，竞争对手是呼声极高的希拉里，跟后来的哈里斯一样，希拉里也顶着“可能是美国史上第一位女总统的”光环，这种光环就像奥巴马的“美国史上第一位黑人总统”一样自带天赋神权的噱头。如果不是邮件门，特朗普可能还真的无法战胜希拉里。希拉里的背后是华尔街势力和顶级财团，特朗普能在2016选举中胜出的原因很大一部分是他提出的制造业回流美国拉拢了一大批美国工人阶级。</p>
             <p>一直以来由于华尔街势力的壮大，金融业占据美国社会的主流地位；另一方面跨国资本为了合理避税和最大化利润空间，在全球范围内寻找投资洼地转移自己的制造产业（税收低、人力便宜、资源丰富），这个过程我们是最大的收益者。</p>
             <p>在这样的背景下美国的工人阶级生存空间收到挤压，他们对现状无可奈何。这个时候特朗普横空出世，喊出的口号一下俘获了大批美国工人阶级的拥护，进而帮助特朗普拿下了总统宝座。特朗普的上台也标志着美国国内民粹主义的抬头，这一点在几年后的冲击国会山中展现的淋漓尽致。</p>
             <p>初登总统宝座的特朗普怎么都不像一个典型的政客，而是更多地保留了自己的商人本能，因为不满对中国大陆的贸易逆差挑起了关税战，因为不满美国与日俱增的军费支出开始“退群”、“要求被驻军地加钱”等等，这时候的特朗普初步认识到美国社会的分裂，但是距离进化成一个成熟的政客为时尚早，如果你有印象，这时候的特朗普经常被人调侃推特治国。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">时间回到现在，为什么又是特朗普？</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">时间回到现在，为什么又是特朗普？</h2>
             <p>拜登执政的民主党延续了特朗普时期的关税政策，这一点跟特朗普上台之后立马就废除了奥巴马的两大政策不同，拜登至少还是给特朗普留了点政治遗产，这也是为什么奥巴马对特朗普恨之入骨的原因，因为特朗普让奥巴马除了美国第一个黑人总统这个称号之外丝毫没留下任何政治遗产，也正因为如此，这次哈里斯竞选的背后你能频频看到奥巴马出面站队甚至积极参与拉票。</p>
             <p>回到正题，为什么这次又是特朗普赢下了总统大选？</p>
             <p>拜登执政的民主党因其保守的执政手段引起了美国精英群体的不满，这个精英群体就是一众硅谷大佬，在OPENAI推出标志性的ChatGPT后，硅谷精英们看到了科技重塑现实世界的美好愿景，可惜保守的民主党一系列法案让硅谷的精英们举步维艰，他们开始物色能够推翻拜登政府的人物，这时候宣布再次竞选总统宝座的特朗普自然成了他们眼中可以拉拢的盟友，因为特朗普在第一任期大胆且不计后果的行事风格正好跟保守至上的拜登形成鲜明的对比。所以我们能看到扎克伯格、马斯克、蒂尔等科技大佬以及红杉资本等硅谷大佬明确站队支持特朗普。从选票构成中更可以看到除了特朗普本就稳固的工人阶级之外，硅谷的各路精英成了新的支持者，从而帮助特朗普再次赢下总统大选。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">一个“疯子”和一群精英？</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">一个“疯子”和一群精英？</h2>
             <p>这次再入主白宫，摆在特朗普面前的是一个日益分裂的美国，同时也是债务高企的美国。</p>
             <p>仅仅靠制造业回流美国或者削减国际支出已经不足以让美国再次强大，特朗普需要另辟蹊径。不过这次命运之神可能还真的就站在特朗普这一边，演讲中扭头躲过子弹，留下了一张比肩法国名画《自由引导人民》的的照片，不得不说遇刺之后连续喊出的三声“fight！fight！fight！”确实帮助特朗普赢得极大的声望。获得硅谷大佬们明确站台以及注资，助选团有万斯、加巴德、卡尔森、肯尼迪以及马斯克这样的顶级阵容。</p>
             <p>特朗普在拿下总统之后，共和党又拿下参议院，大概率也要拿下众议院，这样特朗普至少两年的任期内的提案通过阻力会小很多，不过变数还是在中期选举后，特朗普第一任期在中期选举后丢掉众议院导致自己被弹劾下台。</p>
@@ -469,7 +483,7 @@
             <p>一个胆大的“疯子”和一群视规则为桎梏的精英，特朗普的四年任期只是开始，可以预见从这里开始，很多事情将会和以前变得不同。</p>
           </div>
 
-          <div class="mt-10 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-center">
+          <div class="mt-8 pt-5 border-t border-neutral-200 dark:border-neutral-800 text-center">
             <button onclick="toggleArticle('article-trump')" class="font-mono text-xs border border-neutral-400 dark:border-neutral-700 px-4 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
               BACK TO INDEX ↑
             </button>
@@ -477,27 +491,27 @@
         </div>
       </article>
 
-      <!-- Article 01: 聊聊比特币 -->
-      <article id="article-btc" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-10 md:py-14">
+      <!-- Article 01 -->
+      <article id="article-btc" class="hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#121212] px-5 sm:px-8 md:px-12 py-8 sm:py-12">
         <div class="max-w-2xl mx-auto">
-          <div class="flex justify-between items-center pb-5 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6 md:mb-8">
-            <span>ENTRY: 001 // ESSAY</span>
+          <div class="flex justify-between items-center pb-4 border-b border-neutral-200 dark:border-neutral-800 font-mono text-xs text-neutral-500 mb-6">
+            <span>ENTRY: 001</span>
             <button onclick="toggleArticle('article-btc')" class="hover:text-black dark:hover:text-white font-bold uppercase underline">
-              [ CLOSE ARTICLE ✕ ]
+              [ CLOSE ✕ ]
             </button>
           </div>
 
-          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6 md:mb-8">聊聊比特币</h1>
+          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">聊聊比特币</h1>
 
-          <div class="space-y-6 text-sm md:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">1.最初的货币</h2>
+          <div class="space-y-5 text-sm sm:text-base leading-relaxed text-neutral-800 dark:text-neutral-300">
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">1.最初的货币</h2>
             <p>马克思受到18世纪意大利学者加里安尼《货币论》的影响写下“金银天然不是货币，但货币天然是金银”。</p>
             <p>原始社会，人们以物易物去交换自己需要的物资，后来受到交换物资种类的限制，不得不寻找一种双方都能接受的物品，从牲畜、食盐、稀有的贝壳、珍稀的鸟类羽毛等等慢慢演变到黄金白银。黄金白银的共识及采用可以说标志着全球贸易新阶段。彼时世界的货币体系处于金本位盛世，这个时代里金币之类的足值货币实打实包含着价值上同硬币面值大致相当的稀有金属。因为贸易的需求越来越大，交易的速度需求越来越快，黄金和白银的不便携性问题开始凸显，纸币被发明了出来。</p>
             <p>纸币的出现标志着金本位的穷途末路，甚至我会说纸币是个邪恶的东西，相比于金币，纸币更多的掠夺了人民的财富。纸币的铸造成本极低，同时币值数额又较大，两者的差额就是铸币税，铸币税是一种特殊的税收收入，也是国家的重要收入来源。所以各国都会把货币发行权牢牢把控在自己手里，讲到这里要提到一个人物——约翰·肯尼迪。在展开之前我先大致说一下美国政府和美联储的关系，其实大多数人还不知道美联储是私人银行，美国政府没有货币的发行权，如果美国政府想发行美元只能通过财政部发行国债，然后美联储印刷美元购买国债，通过这个过程完成美元货币的发行。再说回肯尼迪，肯尼迪当上总统之后最想做的事是试图从私人银行家中收回货币的控制权，肯尼迪曾经签署了11110号行政命令，这项命令允许美国政府绕过整个美联储系统，发行无债务货币。肯尼迪希望美国只有国会可以铸造和监管货币，而非私人银行美联储，后面发生的故事背后的意义就很值得玩味了。在他之前还有一位被暗杀的总统——林肯，同样也在这方面尝试过，推出过林肯绿币，一样是想把铸币权把控在国家手中而不是私人银行家手中。</p>
             <p>1971年8月15日，布雷顿森林体系落下帷幕，金本位寿终正寝。</p>
             <p>世界货币体系从金银货币大步迈向信用货币，所谓信用货币也就是债务货币。在脱离布雷顿森林体系后，美元迅速找到了新的价值锚定标的——石油，轰轰烈烈的石油美元开始，简单地说就是美国跟沙特达成协议，美国印钱去买沙特石油，沙特用收到的美元再去购买美债。听起来像不像首尾相连的蛇，既然首尾相连，这条蛇最终会吃掉自己，也就是这条蛇最终会惨死在自己腹中。这个阶段也是目前我们在经历的阶段，如果有什么信号预示着它的结束，那就是美国开采页岩油从进口国一跃成为出口国。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">2.金本位货币—信用货币（债务货币）—？</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">2.金本位货币—信用货币（债务货币）—？</h2>
             <p>前面洋洋洒洒大致讲了货币的演变，是因为我们未来要去哪里，就一定要清楚我们从哪里来。</p>
             <p>货币天然是金银，因为金银不能被制造，确定了它的稀缺性，你把金银融化了它还是金银，当然你可以在其中添加杂质，为此19世纪的欧洲大陆上，英国、法国、德国等几个国家还出台过法律约束金块的纯质。</p>
             <p>一战和二战使得美国迅速崛起，崛起的背后也是信用货币广泛占据全球贸易体系的过程，在这个过程中美国自身也债台高筑，甚至在拜登政府时直接废除了债务上限。如果单单按照美元购买力计算，从1913年开始至今，美元的实际购买力已经下降97%，我们小时候美元还叫什么你一定记得——美金。超发的货币造就了这一切，贸易产生在不是足值货币的基础上，用债务去填充，形成了超发-紧缩周期，制造了一个又一个经济危机。</p>
@@ -509,26 +523,26 @@
             <p>目前对于比特币价格的遐想无一例外不是建立在黄金模型之上，用全球黄金总市值除以比特币的固定数量2100万枚。</p>
             <p>话说回来，在铸币税的强权集中、发行唯一的推动下，诞生了中央银行和大大小小的商业银行。银行未来会怎么演变呢？在我个人来看，未来银行会不复存在，对应的税务体系会空前壮大。在可以预见的未来银行会以COINBASE这种交易所的形式存在，传统意义上的银行名存实亡，我们努力工作从国家手里拿到工资进行消费抑或存入银行被银行拿去放贷和收取管理费这样亲身参与到货币的陷阱循环里的过程也会彻底改变。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">3.制度</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">3.制度</h2>
             <p>文章开头马克思关于终极货币的设想：马克思认为社会的终极形态是共产主义，理应摒弃掺杂私人财富等隐蔽目的的一般等价物，终极货币的形态应该是证书，不是一堆密钥的那种证书。马克思所说的证书更倾向于技能，也就是所谓的技能证书，在他所设想的社会制度上，按劳分配，也就是按照技能劳作分配，即是集体财富的分配直接到个人而不通过一般等价物的形式，同时建立在共产主义上，维持人类社会基本运作的规则都会发生变化，你不需要再用货币去购买食物，这些都算在你的技能劳作中统一分配。由此展开来，你再去设想更多，或许也会得出跟我一样的结论，这种形式仿佛是传说中建造巴比伦塔的人类所能创造出的社会制度，万众一心、绝对服从，且沟通语言单一。现代社会早就是罗生门，罗生门一词出自黑泽明的电影，是每一个人对同一事物的不同说法，体现了人因为私欲、互不信任，甚至利己主义而扭曲事实叙事的问题。古人尚说三人成虎，何况千万人集结成的社会。这里就不延申了，因为牵扯到社会制度最终会变成集体主义还是自我主义本就是人类社会制度进程中必经的一个关口，才学疏浅，不敢妄谈。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">4.黄金价格的变化</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">4.黄金价格的变化</h2>
             <p>看回黄金，黄金在1971年8月15日布雷顿森林体系瓦解后，从40美元一盎司用了不到十年时间飙涨到800多美元一盎司，涨幅达到2049%。然后用了将近30年回落到最低240美元一盎司。在2004年黄金ETF被SEC批准，黄金又上涨了387%到现在1900美元一盎司。</p>
             <p>布雷顿森林体系还未废除的时候，法律甚至规定私人持有黄金违法，然后政府以35美元一盎司大量回购黄金。在布雷顿森林体系废除后，天然货币黄金被压制的价格一飞冲天，对比超发的美元，黄金这种旧时代仅仅用来制作等值硬币的稀有贵金属第一次变成与债务货币对冲的风险投资品。</p>
 
-            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-8">5.黄金ETF和比特币ETF</h2>
+            <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">5.黄金ETF和比特币ETF</h2>
             <p>黄金目前开采量达到20万吨，49%用于珠宝，然后19%用于黄金投资——这其中包含黄金ETF，再包含工业用途、中央银行储备、未明持有，就是黄金的全部持有情况了。</p>
             <p>黄金ETF的本质是大型黄金生产商向基金公司寄售实物黄金，然后基金公司以实物黄金为依托，发行基金销售。这个过程投资者可以免去黄金保管费、储藏费、保险费等等费用。</p>
             <p>这对于比特币现货ETF有什么启示呢？比特币的持有相对分散，而且不具备实物属性和工业属性，也就是黄金中占大头的珠宝产品和工业用途。比特币ETF的投资持有会占比更高，同时比特币现货ETF是以持有比特币现货单位所谓基金发行方，比如COINBASE和ARK，在这个基础上比特币能实现很高的溢价能力，不再是传统的矿工成本价加上资金流入程度的简单叠加，而是变成投资属性放大同时在合规市场内成为股票、黄金之外可以正常吸引资金流入的投资品。可以预见到的是加密货币钱包市场将迎来一股春风，同时传统银行也会更快接纳比特币做为投资品。但是就像前面提到的，比特币想要真正得到发展，比如要挣脱稳定币这一枷锁，实现与法币的自由流通，这个是一个大问题，也是SEC需要面对的问题——如何监管法币和比特币的流通去向。比特币的ETF似乎是一头呼之欲出的猛兽，但是如何让这头猛兽不像洪水一样肆虐，各国的监管制定者都在头疼。只是头疼有用吗？比特币最终是要取代黄金，无论在什么样的枷锁之下。COINBASE等最终是要成为新时代的银行。</p>
             <p>一个新的时代，关乎财富分配，扼杀了债务货币而且远胜金本位货币的时代。</p>
 
-            <div class="border border-neutral-300 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 p-4 font-mono text-xs text-neutral-600 dark:text-neutral-400 mt-8 md:mt-10 space-y-2">
+            <div class="border border-neutral-300 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 p-4 font-mono text-xs text-neutral-600 dark:text-neutral-400 mt-6 space-y-2">
               <p>写下这篇文章的时候是2023年9月26号，那时候黄金1910一盎司，比特币ETF也没有通过。</p>
               <p>一年之后的今天突然又翻到这篇文章，黄金创下了历史新高2790一盎司，比特币也离历史新高73500美元还差一点，这样的价格并不是它们的终点。</p>
             </div>
           </div>
 
-          <div class="mt-10 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-center">
+          <div class="mt-8 pt-5 border-t border-neutral-200 dark:border-neutral-800 text-center">
             <button onclick="toggleArticle('article-btc')" class="font-mono text-xs border border-neutral-400 dark:border-neutral-700 px-4 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
               BACK TO INDEX ↑
             </button>
@@ -537,29 +551,26 @@
       </article>
     </div>
 
-    <!-- Footer -->
-    <footer class="px-5 sm:px-6 py-6 sm:py-8 flex flex-col sm:flex-row justify-between items-start sm:items-center font-mono text-xs text-neutral-400 dark:text-neutral-500 space-y-3 sm:space-y-0">
+    <!-- 规整的 Footer (手机端完美居中/两端对齐) -->
+    <footer class="px-5 sm:px-6 py-6 border-t border-neutral-300 dark:border-neutral-800 flex flex-row justify-between items-center font-mono text-xs text-neutral-400 dark:text-neutral-500">
       <div class="flex items-center space-x-2">
         <span class="inline-block w-1.5 h-1.5 bg-neutral-400 dark:bg-neutral-600"></span>
         <span class="font-semibold text-neutral-700 dark:text-neutral-300 tracking-wider">LUCASCHEN.CC</span>
       </div>
-      <div class="flex items-center space-x-6">
-        <span>UTC+8</span>
+      <div class="text-[11px]">
         <span>© 2026</span>
       </div>
     </footer>
 
   </div>
 
-  <!-- 防复制脚本与平滑定位展开 -->
+  <!-- 防复制脚本与定位 -->
   <script>
-    // 1. 彻底禁用右键菜单、快捷键复制 (Ctrl/Cmd + C, A, X, U)
     document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
     });
 
     document.addEventListener('keydown', function(e) {
-      // 禁用 Ctrl / Command + A, C, X, U, S
       if ((e.ctrlKey || e.metaKey) && ['a', 'c', 'x', 'u', 's'].includes(e.key.toLowerCase())) {
         e.preventDefault();
       }
@@ -569,15 +580,12 @@
       e.preventDefault();
     });
 
-    // 2. 文章点击平滑展开与定位逻辑
     function toggleArticle(id) {
       const target = document.getElementById(id);
       const isCurrentlyHidden = target.classList.contains('hidden');
       
-      // 关闭所有已展开的文章
       document.querySelectorAll('article').forEach(art => art.classList.add('hidden'));
 
-      // 如果当前是收起状态，则展开并平滑定位
       if (isCurrentlyHidden) {
         target.classList.remove('hidden');
         const yOffset = -20; 

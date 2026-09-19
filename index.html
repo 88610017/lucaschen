@@ -5,7 +5,25 @@
   <!-- 严格锁定视口比例，禁止双指手势缩放 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
   <title>LUCAS CHEN</title>
-  
+  <meta name="description" content="记录宏观流动性、体系裂痕，与正在被颠覆的旧规则。" />
+
+  <!-- ================= Open Graph 微信 / 社交卡片协议 ================= -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LUCAS CHEN" />
+  <meta property="og:description" content="记录宏观流动性、体系裂痕，与正在被颠覆的旧规则。" />
+  <meta property="og:image" content="https://lucaschen.cc/share.png" />
+  <meta property="og:image:width" content="500" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:url" content="https://lucaschen.cc/" />
+  <meta property="og:site_name" content="LUCAS CHEN" />
+
+  <!-- Twitter / X 富文本卡片 -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="LUCAS CHEN" />
+  <meta name="twitter:description" content="记录宏观流动性、体系裂痕，与正在被颠覆的旧规则。" />
+  <meta name="twitter:image" content="https://lucaschen.cc/share.png" />
+  <!-- ================================================================= -->
+
   <!-- 动态自适应矢量 Favicon：暗色系统白标，亮色系统黑标 -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cstyle%3E.stroke-line%7Bstroke:%23111111;fill:none;stroke-width:10;stroke-linecap:square%7D@media(prefers-color-scheme:dark)%7B.stroke-line%7Bstroke:%23F8F8F6%7D%7D%3C/style%3E%3Cpath class='stroke-line' d='M65 20 H20 V65' /%3E%3Cpath class='stroke-line' d='M35 80 H80 V35' /%3E%3C/svg%3E">
 
@@ -24,7 +42,6 @@
     html, body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       -webkit-font-smoothing: antialiased;
-      /* 核心约束：仅允许垂直滑动滚动，底层锁死两指捏合与缩放手势 */
       touch-action: pan-y;
       -webkit-text-size-adjust: 100%;
     }
@@ -43,6 +60,11 @@
   </style>
 </head>
 <body class="bg-[#F8F8F6] text-[#111111] dark:bg-[#0E0E0E] dark:text-[#E8E8E6] transition-colors duration-200">
+
+  <!-- 微信爬虫专用兜底隐藏图（微信内置浏览器抓图最优先读取 body 内第一张图） -->
+  <div style="display:none; position:absolute; top:-9999px; left:-9999px; width:0; height:0; overflow:hidden;">
+    <img src="https://lucaschen.cc/share.png" alt="LUCAS CHEN" width="500" height="500" />
+  </div>
 
   <!-- Main Container -->
   <div class="max-w-4xl mx-auto border-x border-neutral-300 dark:border-neutral-800 min-h-screen flex flex-col justify-between">
@@ -264,7 +286,7 @@
             <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">大漂亮法案和GENIUS法案</h2>
             <p>首先，这个法案的名字真的叫大漂亮法案，很有特朗普的风格。在通过众议院之后，有些眼尖的人发现法案看似不起眼的第899条实际上是一颗大雷，简单点说就是特朗普政府要对所有非美投资者征收5%的税，而且是每年递增5%直到20%的上限，你在美国的投资，不仅限于美股、美债，甚至你在美国购买的房产卖出或者租出产生的被动收入全部要被征收5%起的税。</p>
             <p>美国作为全球最重要的金融市场，他的美债规模是37万亿美元，外国投资者持有9万亿美元；美股规模是79万亿美元，外国投资者持有14万亿美元。这些全部按照5%征税，虽然在第一年确实会给美国政府补充不少收入，但是实打实在损害美国这个全球最大的金融市场，也难怪马斯克看到这条法案之后直接在X平台怒喷特朗普。</p>
-            <p>GENIUS法案翻译过来就是天才法案，没错，特朗普的取名总是这么朴实无华。GENIUS法案是稳定币的法案，有关稳定币的介绍可看陈城佑同学的精选文章《稳定币研究(2025年-6月)》。</p>
+            <p>GENIUS法案翻译过来就是天才法案，没错，特朗普的取名总是这么朴实华。GENIUS法案是稳定币的法案，有关稳定币的介绍可看陈城佑同学的精选文章《稳定币研究(2025年-6月)》。</p>
 
             <h2 class="text-base sm:text-lg font-bold text-black dark:text-white border-l-2 border-black dark:border-white pl-3 mt-6">特朗普的大漂亮法案真就是一次头脑发热的决定吗？</h2>
             <p>对于美国金融市场的国际大买家欧洲来说，从大打保护主义的特朗普上台之后，表现最亮眼的资产是黄金，一部分原因是市场对美元资产不确定性做的对冲措施大举增持黄金导致黄金价格一骑绝尘。同时欧盟核心国德国的股票在今年也上涨了21%，欧元对美元也升值7%，这体现了欧洲资本在加速撤离美国。欧洲跟美国在二战后建立了盟友关系，放弃了军事自卫，严重依赖于美国的军事保护，但是在今年欧洲投票通过了增加军事支出，试图实现军事自卫。</p>
@@ -555,7 +577,7 @@
       </article>
     </div>
 
-    <!-- 规整的 Footer (去掉了小方块，左右两端极简等宽对齐) -->
+    <!-- 底部 Footer -->
     <footer class="px-5 sm:px-6 py-6 border-t border-neutral-300 dark:border-neutral-800 flex flex-row justify-between items-center font-mono text-[11px] font-normal text-neutral-400 dark:text-neutral-500">
       <div>
         <span class="tracking-wider">LUCASCHEN.CC</span>
@@ -569,7 +591,6 @@
 
   <!-- 防复制脚本与移动端手势锁死 -->
   <script>
-    // 1. 防复制、防剪切、防右键
     document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
     });
@@ -584,7 +605,6 @@
       e.preventDefault();
     });
 
-    // 2. 彻底禁止 iOS / 移动端两指手势缩放与多点触控
     document.addEventListener('gesturestart', function(e) {
       e.preventDefault();
     });
@@ -599,12 +619,11 @@
     document.addEventListener('touchend', function(e) {
       const now = (new Date()).getTime();
       if (now - lastTouchEnd <= 300) {
-        e.preventDefault(); // 阻止手机快速双击放大
+        e.preventDefault();
       }
       lastTouchEnd = now;
     }, false);
 
-    // 3. 文章展开平滑定位
     function toggleArticle(id) {
       const target = document.getElementById(id);
       const isCurrentlyHidden = target.classList.contains('hidden');

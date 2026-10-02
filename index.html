@@ -73,7 +73,6 @@
     * {
       -webkit-user-select: none;
       -moz-user-select: none;
-      -ms-user-select: none;
       user-select: none;
       -webkit-touch-callout: none;
     }
@@ -132,7 +131,7 @@
 </head>
 <body class="text-neutral-900 dark:text-neutral-100 min-h-screen">
 
-  <!-- 微信爬虫专用兜底隐藏图（微信内置浏览器抓图最优先读取 body 内第一张图） -->
+  <!-- 微信爬虫专用兜底隐藏图 -->
   <div style="display:none; position:absolute; top:-9999px; left:-9999px; width:0; height:0; overflow:hidden;">
     <img src="https://lucaschen.cc/share.png" alt="LUCAS CHEN" width="500" height="500" />
   </div>
@@ -144,7 +143,7 @@
   <div class="relative max-w-5xl mx-auto border-x border-neutral-300 dark:border-neutral-800 min-h-screen grid-lines flex flex-col justify-between">
     
     <div>
-      <!-- Navigation Bar (间距自然收紧) -->
+      <!-- Navigation Bar -->
       <header class="sticky top-0 z-40 backdrop-blur-md bg-canvas/80 dark:bg-void/80 border-b border-neutral-300 dark:border-neutral-800 px-5 sm:px-8 py-4 flex justify-between items-center text-xs font-mono">
         <a href="#" class="group flex items-center space-x-3 tracking-wider">
           <svg class="w-4 h-4 shrink-0 transition-transform duration-500 group-hover:rotate-90 ease-editorial" viewBox="0 0 100 100" fill="none">
@@ -183,7 +182,7 @@
         </div>
       </section>
 
-      <!-- Broadcast Channels (增强三个频道的差异化身份标识) -->
+      <!-- Broadcast Channels -->
       <section class="border-b border-neutral-300 dark:border-neutral-800">
         <div class="px-5 sm:px-8 py-2.5 bg-neutral-200/50 dark:bg-neutral-900/40 border-b border-neutral-300 dark:border-neutral-800 flex justify-between items-center font-mono text-[10px] tracking-[0.2em] text-neutral-400 uppercase">
           <span>[ TRANSMISSION FREQUENCIES ]</span>
@@ -230,7 +229,7 @@
             </div>
           </a>
 
-          <!-- Channel 03: Bilibili -->
+          <!-- Channel 03: Bilibili (箭头已修复为标准开放式折角) -->
           <a href="https://space.bilibili.com/14014217" target="_blank" rel="noopener noreferrer" 
              class="group p-5 sm:p-7 flex flex-col justify-between hover:bg-neutral-100 dark:hover:bg-neutral-900/80 transition-colors duration-300 ease-editorial relative">
             <div class="flex justify-between items-center mb-5">
@@ -239,7 +238,7 @@
               </span>
               <svg class="w-4 h-4 text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 17 17 17 17 7"></polyline>
+                <polyline points="7 7 17 7 17 7"></polyline>
               </svg>
             </div>
             <div>
@@ -251,7 +250,7 @@
         </div>
       </section>
 
-      <!-- Selected Writings / Archive Section (手机端严格两行对齐体系) -->
+      <!-- Selected Writings / Archive Section -->
       <section class="border-b border-neutral-300 dark:border-neutral-800">
         <div class="px-5 sm:px-8 py-2.5 bg-neutral-200/50 dark:bg-neutral-900/40 border-b border-neutral-300 dark:border-neutral-800 flex justify-between items-center font-mono text-[10px] tracking-[0.2em] text-neutral-400 uppercase">
           <span>[ ARCHIVED LOGS & DISPATCHES ]</span>

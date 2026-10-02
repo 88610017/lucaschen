@@ -116,15 +116,15 @@
 
     /* 正文三档字号缩放 */
     .article-text-sm {
-      font-size: 0.875rem !important; /* 14px */
+      font-size: 0.875rem !important;
       line-height: 1.75 !important;
     }
     .article-text-base {
-      font-size: 1rem !important;     /* 16px */
+      font-size: 1rem !important;
       line-height: 1.85 !important;
     }
     .article-text-lg {
-      font-size: 1.125rem !important; /* 18px */
+      font-size: 1.125rem !important;
       line-height: 1.95 !important;
     }
   </style>
@@ -162,18 +162,20 @@
         </div>
       </header>
 
-      <!-- Hero Statement -->
-      <section class="border-b border-neutral-300 dark:border-neutral-800 px-5 sm:px-12 py-12 sm:py-24 relative overflow-hidden">
-        <div class="flex items-center justify-between font-mono text-[10px] sm:text-[11px] tracking-[0.2em] text-neutral-400 dark:text-neutral-500 mb-6 uppercase">
-          <span>[ PERSPECTIVE // 观察视角 ]</span>
-          <span>40.7128° N, 74.0060° W</span>
+      <!-- Hero Statement (顶部视角完美单行对齐) -->
+      <section class="border-b border-neutral-300 dark:border-neutral-800 px-5 sm:px-12 py-10 sm:py-24 relative overflow-hidden">
+        <div class="flex items-center justify-between font-mono text-[11px] tracking-wider text-neutral-400 dark:text-neutral-500 mb-6 uppercase">
+          <span class="whitespace-nowrap">[ 视角 // PERSPECTIVE ]</span>
+          <!-- 手机端显示简练代码，桌面端显示全经纬度，绝不换行 -->
+          <span class="whitespace-nowrap sm:hidden">01</span>
+          <span class="whitespace-nowrap hidden sm:inline">40.7128°N, 74.0060°W</span>
         </div>
         
-        <h1 class="text-2xl sm:text-5xl md:text-6xl font-light tracking-[-0.03em] leading-[1.12] sm:leading-[1.08] max-w-4xl mb-6 sm:mb-8">
+        <h1 class="text-2xl sm:text-5xl md:text-6xl font-light tracking-[-0.03em] leading-[1.15] sm:leading-[1.08] max-w-4xl mb-6 sm:mb-8">
           Observing <span class="font-semibold text-neutral-900 dark:text-white underline decoration-neutral-300 dark:decoration-neutral-700 underline-offset-8">macro liquidity</span>, systemic shifts & rule breakers.
         </h1>
 
-        <!-- 带有模糊渐显与聚焦交互的汉字文案 -->
+        <!-- 汉字标语 -->
         <div class="relative group max-w-xl">
           <p class="chinese-quote-anim text-neutral-500 dark:text-neutral-400 font-sans text-xs sm:text-base leading-relaxed tracking-wide font-normal transition-all duration-300 ease-editorial group-hover:text-neutral-900 dark:group-hover:text-neutral-100 group-hover:tracking-wider">
             记录宏观流动性、体系裂痕，与正在被颠覆的旧规则。在确定性的缝隙中捕捉流动信号。
@@ -182,11 +184,11 @@
         </div>
       </section>
 
-      <!-- Broadcast Channels (双语频道标签) -->
+      <!-- Broadcast Channels (手机端单行绝不折断) -->
       <section class="border-b border-neutral-300 dark:border-neutral-800">
-        <div class="px-5 sm:px-8 py-2.5 bg-neutral-200/50 dark:bg-neutral-900/40 border-b border-neutral-300 dark:border-neutral-800 flex justify-between items-center font-mono text-[10px] tracking-[0.2em] text-neutral-400 uppercase">
-          <span>[ TRANSMISSION FREQUENCIES // 频道矩阵 ]</span>
-          <span>INDEX: 03</span>
+        <div class="px-5 sm:px-8 py-2.5 bg-neutral-200/50 dark:bg-neutral-900/40 border-b border-neutral-300 dark:border-neutral-800 flex justify-between items-center font-mono text-[11px] tracking-wider text-neutral-400 uppercase">
+          <span class="whitespace-nowrap">[ 频道矩阵 // CHANNELS ]</span>
+          <span class="whitespace-nowrap shrink-0">INDEX: 03</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-neutral-300 dark:border-neutral-800">
@@ -194,13 +196,13 @@
           <!-- Channel 01: X / Twitter -->
           <a href="https://x.com/x_lucaschen" target="_blank" rel="noopener noreferrer" 
              class="group p-5 sm:p-7 flex flex-col justify-between hover:bg-neutral-100 dark:hover:bg-neutral-900/80 transition-colors duration-300 ease-editorial relative">
-            <div class="flex justify-between items-center mb-5">
+            <div class="flex justify-between items-center mb-4 sm:mb-5">
               <span class="font-mono text-[10px] tracking-widest px-1.5 py-0.5 border border-neutral-300 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 bg-neutral-100/50 dark:bg-neutral-800/40">
                 01 // MICRO-FEED
               </span>
               <svg class="w-4 h-4 text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
+                <polyline points="7 7 17 7 17 7"></polyline>
               </svg>
             </div>
             <div>
@@ -213,7 +215,7 @@
           <!-- Channel 02: YouTube -->
           <a href="https://www.youtube.com/@yt_lucaschen" target="_blank" rel="noopener noreferrer" 
              class="group p-5 sm:p-7 flex flex-col justify-between hover:bg-neutral-100 dark:hover:bg-neutral-900/80 transition-colors duration-300 ease-editorial relative">
-            <div class="flex justify-between items-center mb-5">
+            <div class="flex justify-between items-center mb-4 sm:mb-5">
               <span class="font-mono text-[10px] tracking-widest px-1.5 py-0.5 border border-neutral-300 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 bg-neutral-100/50 dark:bg-neutral-800/40">
                 02 // LONG-VIDEO
               </span>
@@ -232,7 +234,7 @@
           <!-- Channel 03: Bilibili -->
           <a href="https://space.bilibili.com/14014217" target="_blank" rel="noopener noreferrer" 
              class="group p-5 sm:p-7 flex flex-col justify-between hover:bg-neutral-100 dark:hover:bg-neutral-900/80 transition-colors duration-300 ease-editorial relative">
-            <div class="flex justify-between items-center mb-5">
+            <div class="flex justify-between items-center mb-4 sm:mb-5">
               <span class="font-mono text-[10px] tracking-widest px-1.5 py-0.5 border border-neutral-300 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 bg-neutral-100/50 dark:bg-neutral-800/40">
                 03 // COMMUNITY
               </span>
@@ -250,11 +252,11 @@
         </div>
       </section>
 
-      <!-- Selected Writings / Archive Section (双语文章归档标签) -->
+      <!-- Selected Writings / Archive Section (手机端单行绝不折断) -->
       <section class="border-b border-neutral-300 dark:border-neutral-800">
-        <div class="px-5 sm:px-8 py-2.5 bg-neutral-200/50 dark:bg-neutral-900/40 border-b border-neutral-300 dark:border-neutral-800 flex justify-between items-center font-mono text-[10px] tracking-[0.2em] text-neutral-400 uppercase">
-          <span>[ ARCHIVED LOGS & DISPATCHES // 随笔与日志 ]</span>
-          <span>ENTRIES: 07</span>
+        <div class="px-5 sm:px-8 py-2.5 bg-neutral-200/50 dark:bg-neutral-900/40 border-b border-neutral-300 dark:border-neutral-800 flex justify-between items-center font-mono text-[11px] tracking-wider text-neutral-400 uppercase">
+          <span class="whitespace-nowrap">[ 随笔日志 // ARCHIVE ]</span>
+          <span class="whitespace-nowrap shrink-0">ENTRIES: 07</span>
         </div>
 
         <div class="divide-y divide-neutral-200 dark:divide-neutral-800/80">
@@ -264,7 +266,7 @@
             <button onclick="toggleArticle('article-genius')" 
                     class="w-full text-left group px-5 sm:px-8 py-4 sm:py-5 hover:bg-neutral-100/80 dark:hover:bg-neutral-900/50 transition-colors duration-200 ease-editorial">
               
-              <!-- 桌面端 (宽屏) 水平单行 -->
+              <!-- 桌面端 (宽屏) -->
               <div class="hidden sm:flex items-center justify-between">
                 <div class="flex items-center space-x-4">
                   <span class="font-mono text-[11px] text-neutral-400 tracking-wider">07</span>
@@ -283,7 +285,7 @@
                 </div>
               </div>
 
-              <!-- 手机端 (窄屏) 严格两行对齐体系 -->
+              <!-- 手机端 (窄屏) -->
               <div class="sm:hidden flex flex-col space-y-2">
                 <div class="text-[15px] font-semibold text-neutral-900 dark:text-neutral-100 leading-snug">
                   大漂亮法案和GENIUS法案
@@ -651,7 +653,7 @@
                     <span>READ</span>
                     <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square">
                       <line x1="7" y1="7" x2="17" y2="17"></line>
-                      <polyline points="7 17 17 17 17 7"></polyline>
+                      <polyline points="7 17 17 17 7"></polyline>
                     </svg>
                   </div>
                 </div>
@@ -924,7 +926,6 @@
 
   <!-- 终极防护脚本：锁死缩放、防复制、进度条与字号调节 -->
   <script>
-    // 1. 防复制、防剪切、防右键、防源码快捷键
     document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
     });
@@ -939,7 +940,6 @@
       e.preventDefault();
     });
 
-    // 2. 彻底禁止 iOS / 移动端两指手势缩放与快速双击放大
     document.addEventListener('gesturestart', function(e) {
       e.preventDefault();
     });
@@ -959,7 +959,6 @@
       lastTouchEnd = now;
     }, false);
 
-    // 3. 顶部轻量阅读进度条
     window.addEventListener('scroll', () => {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -967,7 +966,6 @@
       document.getElementById('read-progress').style.width = scrolled + '%';
     });
 
-    // 4. 展开与平滑定位
     function toggleArticle(id) {
       const target = document.getElementById(id);
       const isHidden = target.classList.contains('hidden');
@@ -980,7 +978,6 @@
       }
     }
 
-    // 5. 字号缩放器逻辑 [ A-  A  A+ ]
     function setFontSize(articleId, sizeKey) {
       const articleEl = document.getElementById(articleId);
       const contentEl = articleEl.querySelector('.article-content');
